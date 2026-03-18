@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiestas de Amoedo</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/escudo-amoedo.png" alt="Escudo de Amoedo" class="logo-img">
+        <div>
+          <div class="header-title">Amoedo</div>
+          <div class="header-subtitle">Pazos de Borbén · Galicia</div>
+        </div>
+      </a>
+      <div class="header-spacer"></div>
+      <div class="lang-selector">
+        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-link" id="nav-home">Inicio</a>
+      <a href="poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
+      <a href="comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
+      <a href="historia.html" class="nav-link" id="nav-history">Historia</a>
+      <a href="casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
+      <a href="fiestas.html" class="nav-link active" id="nav-events">Fiestas</a>
+      <a href="fotos.html" class="nav-link" id="nav-photos">Fotos</a>
+    </div>
+  </nav>
+
+  <!-- BODY -->
+
+  <div class="page-body">
+    <div class="page-main">
+            <main>
+                <!-- Introducción -->
+                <div class="card reveal">
+                    <h2 id="fiestas-title">🎉 Fiestas de Amoedo</h2>
+
+                    <div class="img-placeholder" style="background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 100%);">
+                        🎊 Celebraciones
+                    </div>
+
+
+                    <p id="fiestas-intro">
+                        Las fiestas y celebraciones de Amoedo son el reflejo de nuestra tradición, 
+                        identidad y espíritu comunitario. A lo largo del año, la parroquia se viste 
+                        de gala para honrar a sus santos patronos y reunir a vecinos y visitantes 
+                        en jornadas de devoción, música y alegría.
+                    </p>
+                </div>
+
+                <!-- Romaría de San Amaro (Fiesta Principal) -->
+                <div class="card card-amber reveal">
+                    <h2 style="color: #e65100; border-color: #ffb74d;">⭐ <span id="san-amaro-title">Romaría de San Amaro</span></h2>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="data-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span class="data-icon">📅</span>
+                            <span class="data-number">15</span>
+                            <span class="data-label" id="san-amaro-date">Enero</span>
+                        </div>
+                        <div class="data-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <span class="data-icon">⛪</span>
+                            <span class="data-label" id="san-amaro-patron">Patrón de Amoedo</span>
+                        </div>
+                        <div class="data-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <span class="data-icon">🎵</span>
+                            <span class="data-label" id="san-amaro-music">Orquesta</span>
+                        </div>
+                    </div>
+
+                    <p id="san-amaro-desc">
+                        La <strong>Romaría de San Amaro</strong> es la fiesta grande de Amoedo, 
+                        celebrada cada 15 de enero en honor a nuestro santo patrón. Una jornada 
+                        que combina la tradición religiosa con la celebración popular, reuniendo 
+                        a toda la comunidad en un ambiente de hermandad y alegría.
+                    </p>
+
+                    <div class="info-box">
+                        <strong style="color: #2e7d32;">📋 <span id="programa-title">Programa del Día</span></strong>
+                        <ul id="programa-list" style="margin: 10px 0; padding-left: 20px;">
+                            <li><strong>11:00h</strong> - <span id="prog1">Misa Solemne en honor a San Amaro</span></li>
+                            <li><strong>12:00h</strong> - <span id="prog2">Procesión por las calles de la parroquia</span></li>
+                            <li><strong>13:30h</strong> - <span id="prog3">Comida de confraternidad</span></li>
+                            <li><strong>17:00h</strong> - <span id="prog4">Actividades infantiles y juegos tradicionales</span></li>
+                            <li><strong>23:00h</strong> - <span id="prog5">Gran verbena con Orquesta Saudade</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <strong>🎤 <span id="orquesta-title">Orquesta Saudade</span></strong>
+                        <p id="orquesta-desc">
+                            La verbena de San Amaro cuenta con la actuación de la prestigiosa 
+                            <strong>Orquesta Saudade</strong>, que ameniza la noche con un 
+                            repertorio variado de música gallega, pasodobles, rumbas y éxitos 
+                            actuales. Una cita imprescindible para bailar hasta el amanecer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- San Paio -->
+                <div class="card card-blue reveal">
+                    <h2 style="color: #1565c0; border-color: #2196f3;">⛪ <span id="san-paio-title">San Paio de Pazos</span></h2>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="data-item" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <span class="data-icon">📅</span>
+                            <span class="data-number" id="paio-date-num">10</span>
+                            <span class="data-label" id="paio-date-month">Julio</span>
+                        </div>
+                        <div class="data-item" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                            <span class="data-icon">🎪</span>
+                            <span class="data-label" id="paio-event">Fiesta Parroquial</span>
+                        </div>
+                    </div>
+
+                    <p id="san-paio-desc">
+                        Las <strong>Fiestas de San Paio</strong> se celebran el 10 de julio en 
+                        la parroquia vecina de Pazos de Borbén, con quien Amoedo mantiene 
+                        estrechos lazos de comunidad. Misa, procesión y festividades que reúnen 
+                        a las parroquias del municipio en un ambiente de unión y celebración.
+                    </p>
+                </div>
+
+                <!-- Otras Celebraciones -->
+                <div class="card reveal">
+                    <h2 id="otras-title">📆 Otras Celebraciones</h2>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                        <!-- Semana Santa -->
+                        <div class="card card-terra reveal">
+                            <h3 style="color: #6a1b9a; margin-top: 0;">✝️ <span id="semana-santa-title">Semana Santa</span></h3>
+                            <p id="semana-santa-date"><strong id="fecha-label1">Fecha:</strong> Marzo/Abril</p>
+                            <p id="semana-santa-desc">
+                                Celebraciones religiosas durante la Semana Santa con procesiones 
+                                y actos litúrgicos que conmemoran la Pasión de Cristo. Tradición 
+                                profundamente arraigada en la comunidad.
+                            </p>
+                        </div>
+
+                        <!-- Noche de San Juan -->
+                        <div class="card card-amber reveal">
+                            <h3 style="color: #e65100; margin-top: 0;">🔥 <span id="san-juan-title">Noche de San Juan</span></h3>
+                            <p id="san-juan-date"><strong id="fecha-label2">Fecha:</strong> 23 de Junio</p>
+                            <p id="san-juan-desc">
+                                Celebración de la noche más corta del año con hogueras, música 
+                                y tradiciones ancestrales. Una fiesta mágica que da la bienvenida 
+                                al verano.
+                            </p>
+                        </div>
+
+                        <!-- Navidad -->
+                        <div class="card card-green reveal">
+                            <h3 style="color: #2e7d32; margin-top: 0;">🎄 <span id="navidad-title">Navidad</span></h3>
+                            <p id="navidad-date"><strong id="fecha-label3">Fecha:</strong> Diciembre</p>
+                            <p id="navidad-desc">
+                                Celebraciones navideñas con misa del gallo, belenes y eventos 
+                                especiales para todas las edades. El espíritu navideño inunda 
+                                Amoedo durante todo el mes de diciembre.
+                            </p>
+                        </div>
+
+                        <!-- Magosto -->
+                        <div class="card card-terra reveal">
+                            <h3 style="color: #c2185b; margin-top: 0;">🌰 <span id="magosto-title">Magosto</span></h3>
+                            <p id="magosto-date"><strong id="fecha-label4">Fecha:</strong> Noviembre</p>
+                            <p id="magosto-desc">
+                                Tradición gallega del otoño con castañas asadas, música y 
+                                convivencia. Una celebración que honra los frutos de la tierra 
+                                y el trabajo de nuestros montes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tradición y Comunidad -->
+                <div class="card card-amber reveal">
+                    <h2 style="color: #d35400; border-color: #ffa502;" id="tradicion-title">🏛️ Tradición y Comunidad</h2>
+
+                    <p id="tradicion-desc">
+                        Las fiestas de Amoedo son mucho más que celebraciones religiosas o 
+                        populares. Son momentos de encuentro que fortalecen los lazos entre 
+                        vecinos, mantienen vivas nuestras tradiciones y transmiten a las nuevas 
+                        generaciones el amor por la tierra y la comunidad.
+                    </p>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="info-box">
+                            <strong>👥</strong>
+                            <p id="valor-fiesta1">Unión Vecinal</p>
+                        </div>
+                        <div class="info-box">
+                            <strong>🎭</strong>
+                            <p id="valor-fiesta2">Identidad Cultural</p>
+                        </div>
+                        <div class="info-box">
+                            <strong>🌟</strong>
+                            <p id="valor-fiesta3">Tradición Viva</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comisión de Fiestas -->
+                <div class="card card-blue reveal">
+                    <h2 style="color: #01579b; border-color: #4fc3f7;" id="comision-title">👥 Comisión de Fiestas</h2>
+
+                    <p id="comision-desc">
+                        La organización de las fiestas es posible gracias al trabajo voluntario 
+                        de la <strong>Comisión de Fiestas de Amoedo</strong>, formada por vecinos 
+                        comprometidos que dedican tiempo y esfuerzo para que cada celebración sea 
+                        un éxito. Su labor incluye la coordinación de eventos, gestión de permisos, 
+                        contratación de orquestas y la preparación de todas las actividades.
+                    </p>
+
+                    <div class="info-box">
+                        <strong>🤝 <span id="colabora-title">Colabora con Nosotros</span></strong>
+                        <p id="colabora-desc">
+                            Si quieres formar parte de la Comisión de Fiestas o colaborar en la 
+                            organización de eventos, ponte en contacto con la parroquia o asiste 
+                            a las reuniones preparatorias que se anuncian en el tablón de información.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Información Práctica -->
+                <div class="card card-green reveal">
+                    <h2 style="color: #2e7d32; border-color: #66bb6a;" id="info-title">ℹ️ Información Práctica</h2>
+
+                    <ul id="info-list" style="line-height: 1.8;">
+                        <li>🅿️ <strong id="info1-label">Aparcamiento:</strong> <span id="info1">Zonas habilitadas cerca de la iglesia y Casa Cultural</span></li>
+                        <li>🍽️ <strong id="info2-label">Restauración:</strong> <span id="info2">Bares y pulperías en las inmediaciones</span></li>
+                        <li>🚌 <strong id="info3-label">Transporte:</strong> <span id="info3">Líneas de autobús desde Vigo y Pontevedra</span></li>
+                        <li>📱 <strong id="info4-label">Información:</strong> <span id="info4">Consulta el programa detallado en redes sociales</span></li>
+                        <li>♿ <strong id="info5-label">Accesibilidad:</strong> <span id="info5">Espacios adaptados para personas con movilidad reducida</span></li>
+                    </ul>
+
+                    <div class="info-box">
+                        <strong>📸 <span id="galeria-title">Galería de Fotos</span></strong>
+                        <p id="galeria-desc">
+                            Revive los mejores momentos de nuestras fiestas en la <a href="fotos.html" style="color: #2e7d32; font-weight: bold;">sección de fotos</a>. 
+                            Imágenes de procesiones, verbenas y celebraciones que capturan el 
+                            espíritu festivo de Amoedo.
+                        </p>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+
+  </div><!-- /page-body -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p id="footer-text">Amoedo, 2026 · Pazos de Borbén, Galicia</p>
+  </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function updatePageTexts() {
+            const pageTranslations = {
+                es: {
+                    fiestasTitle: "Fiestas de Amoedo",
+                    fiestasIntro: "Las fiestas y celebraciones de Amoedo son el reflejo de nuestra tradición, identidad y espíritu comunitario. A lo largo del año, la parroquia se viste de gala para honrar a sus santos patronos y reunir a vecinos y visitantes en jornadas de devoción, música y alegría.",
+                    sanAmaroTitle: "Romaría de San Amaro",
+                    sanAmaroDate: "Enero",
+                    sanAmaroPatron: "Patrón de Amoedo",
+                    sanAmaroMusic: "Orquesta",
+                    sanAmaroDesc: "La Romaría de San Amaro es la fiesta grande de Amoedo, celebrada cada 15 de enero en honor a nuestro santo patrón. Una jornada que combina la tradición religiosa con la celebración popular, reuniendo a toda la comunidad en un ambiente de hermandad y alegría.",
+                    programaTitle: "Programa del Día",
+                    prog1: "Misa Solemne en honor a San Amaro",
+                    prog2: "Procesión por las calles de la parroquia",
+                    prog3: "Comida de confraternidad",
+                    prog4: "Actividades infantiles y juegos tradicionales",
+                    prog5: "Gran verbena con Orquesta Saudade",
+                    orquestaTitle: "Orquesta Saudade",
+                    orquestaDesc: "La verbena de San Amaro cuenta con la actuación de la prestigiosa Orquesta Saudade, que ameniza la noche con un repertorio variado de música gallega, pasodobles, rumbas y éxitos actuales. Una cita imprescindible para bailar hasta el amanecer.",
+                    sanPaioTitle: "San Paio de Pazos",
+                    paioDateNum: "10",
+                    paioDateMonth: "Julio",
+                    paioEvent: "Fiesta Parroquial",
+                    sanPaioDesc: "Las Fiestas de San Paio se celebran el 10 de julio en la parroquia vecina de Pazos de Borbén, con quien Amoedo mantiene estrechos lazos de comunidad. Misa, procesión y festividades que reúnen a las parroquias del municipio en un ambiente de unión y celebración.",
+                    otrasTitle: "Otras Celebraciones",
+                    semanaSantaTitle: "Semana Santa",
+                    fechaLabel1: "Fecha:",
+                    semanaSantaDate: "Marzo/Abril",
+                    semanaSantaDesc: "Celebraciones religiosas durante la Semana Santa con procesiones y actos litúrgicos que conmemoran la Pasión de Cristo. Tradición profundamente arraigada en la comunidad.",
+                    sanJuanTitle: "Noche de San Juan",
+                    fechaLabel2: "Fecha:",
+                    sanJuanDate: "23 de Junio",
+                    sanJuanDesc: "Celebración de la noche más corta del año con hogueras, música y tradiciones ancestrales. Una fiesta mágica que da la bienvenida al verano.",
+                    navidadTitle: "Navidad",
+                    fechaLabel3: "Fecha:",
+                    navidadDate: "Diciembre",
+                    navidadDesc: "Celebraciones navideñas con misa del gallo, belenes y eventos especiales para todas las edades. El espíritu navideño inunda Amoedo durante todo el mes de diciembre.",
+                    magostoTitle: "Magosto",
+                    fechaLabel4: "Fecha:",
+                    magostoDate: "Noviembre",
+                    magostoDesc: "Tradición gallega del otoño con castañas asadas, música y convivencia. Una celebración que honra los frutos de la tierra y el trabajo de nuestros montes.",
+                    tradicionTitle: "Tradición y Comunidad",
+                    tradicionDesc: "Las fiestas de Amoedo son mucho más que celebraciones religiosas o populares. Son momentos de encuentro que fortalecen los lazos entre vecinos, mantienen vivas nuestras tradiciones y transmiten a las nuevas generaciones el amor por la tierra y la comunidad.",
+                    valorFiesta1: "Unión Vecinal",
+                    valorFiesta2: "Identidad Cultural",
+                    valorFiesta3: "Tradición Viva",
+                    comisionTitle: "Comisión de Fiestas",
+                    comisionDesc: "La organización de las fiestas es posible gracias al trabajo voluntario de la Comisión de Fiestas de Amoedo, formada por vecinos comprometidos que dedican tiempo y esfuerzo para que cada celebración sea un éxito. Su labor incluye la coordinación de eventos, gestión de permisos, contratación de orquestas y la preparación de todas las actividades.",
+                    colaboraTitle: "Colabora con Nosotros",
+                    colaboraDesc: "Si quieres formar parte de la Comisión de Fiestas o colaborar en la organización de eventos, ponte en contacto con la parroquia o asiste a las reuniones preparatorias que se anuncian en el tablón de información.",
+                    infoTitle: "Información Práctica",
+                    info1Label: "Aparcamiento:",
+                    info1: "Zonas habilitadas cerca de la iglesia y Casa Cultural",
+                    info2Label: "Restauración:",
+                    info2: "Bares y pulperías en las inmediaciones",
+                    info3Label: "Transporte:",
+                    info3: "Líneas de autobús desde Vigo y Pontevedra",
+                    info4Label: "Información:",
+                    info4: "Consulta el programa detallado en redes sociales",
+                    info5Label: "Accesibilidad:",
+                    info5: "Espacios adaptados para personas con movilidad reducida",
+                    galeriaTitle: "Galería de Fotos",
+                    galeriaDesc: "Revive los mejores momentos de nuestras fiestas en la sección de fotos. Imágenes de procesiones, verbenas y celebraciones que capturan el espíritu festivo de Amoedo."
+                },
+                gl: {
+                    fiestasTitle: "Festas de Amoedo",
+                    fiestasIntro: "As festas e celebracións de Amoedo son o reflexo da nosa tradición, identidade e espírito comunitario. Ao longo do ano, a parroquia vístese de gala para honrar aos seus santos padroeiros e reunir a veciños e visitantes en xornadas de devoción, música e alegría.",
+                    sanAmaroTitle: "Romaría de San Amaro",
+                    sanAmaroDate: "Xaneiro",
+                    sanAmaroPatron: "Patrón de Amoedo",
+                    sanAmaroMusic: "Orquestra",
+                    sanAmaroDesc: "A Romaría de San Amaro é a festa grande de Amoedo, celebrada cada 15 de xaneiro en honra ao noso santo patrón. Unha xornada que combina a tradición relixiosa coa celebración popular, reunindo a toda a comunidade nun ambiente de irmandade e alegría.",
+                    programaTitle: "Programa do Día",
+                    prog1: "Misa Solemne en honra a San Amaro",
+                    prog2: "Procesión polas rúas da parroquia",
+                    prog3: "Comida de confraternidade",
+                    prog4: "Actividades infantís e xogos tradicionais",
+                    prog5: "Gran verbena coa Orquestra Saudade",
+                    orquestaTitle: "Orquestra Saudade",
+                    orquestaDesc: "A verbena de San Amaro conta coa actuación da prestixiosa Orquestra Saudade, que ameniza a noite cun repertorio variado de música galega, pasodobres, rumbas e éxitos actuais. Unha cita imprescindible para bailar ata o amencer.",
+                    sanPaioTitle: "San Paio de Pazos",
+                    paioDateNum: "10",
+                    paioDateMonth: "Xullo",
+                    paioEvent: "Festa Parroquial",
+                    sanPaioDesc: "As Festas de San Paio celébranse o 10 de xullo na parroquia veciña de Pazos de Borbén, con quen Amoedo mantén estreitos lazos de comunidade. Misa, procesión e festividades que reúnen ás parroquias do concello nun ambiente de unión e celebración.",
+                    otrasTitle: "Outras Celebracións",
+                    semanaSantaTitle: "Semana Santa",
+                    fechaLabel1: "Data:",
+                    semanaSantaDate: "Marzo/Abril",
+                    semanaSantaDesc: "Celebracións relixiosas durante a Semana Santa con procesións e actos litúrxicos que conmemoran a Paixón de Cristo. Tradición profundamente arraigada na comunidade.",
+                    sanJuanTitle: "Noite de San Xoán",
+                    fechaLabel2: "Data:",
+                    sanJuanDate: "23 de Xuño",
+                    sanJuanDesc: "Celebración da noite máis curta do ano con fogueiras, música e tradicións ancestrais. Unha festa máxica que dá a benvida ao verán.",
+                    navidadTitle: "Nadal",
+                    fechaLabel3: "Data:",
+                    navidadDate: "Decembro",
+                    navidadDesc: "Celebracións nadalengas con misa do galo, belenes e eventos especiais para todas as idades. O espírito nadalengo inunda Amoedo durante todo o mes de decembro.",
+                    magostoTitle: "Magosto",
+                    fechaLabel4: "Data:",
+                    magostoDate: "Novembro",
+                    magostoDesc: "Tradición galega do outono con castañas asadas, música e convivencia. Unha celebración que honra os froitos da terra e o traballo dos nosos montes.",
+                    tradicionTitle: "Tradición e Comunidade",
+                    tradicionDesc: "As festas de Amoedo son moito máis que celebracións relixiosas ou populares. Son momentos de encontro que fortalecen os lazos entre veciños, manteñen vivas as nosas tradicións e transmiten ás novas xeracións o amor pola terra e a comunidade.",
+                    valorFiesta1: "Unión Veciñal",
+                    valorFiesta2: "Identidade Cultural",
+                    valorFiesta3: "Tradición Viva",
+                    comisionTitle: "Comisión de Festas",
+                    comisionDesc: "A organización das festas é posible grazas ao traballo voluntario da Comisión de Festas de Amoedo, formada por veciños comprometidos que dedican tempo e esforzo para que cada celebración sexa un éxito. A súa labor inclúe a coordinación de eventos, xestión de permisos, contratación de orquestras e a preparación de todas as actividades.",
+                    colaboraTitle: "Colabora con Nós",
+                    colaboraDesc: "Se queres formar parte da Comisión de Festas ou colaborar na organización de eventos, ponte en contacto coa parroquia ou asiste ás reunións preparatorias que se anuncian no taboleiro de información.",
+                    infoTitle: "Información Práctica",
+                    info1Label: "Aparcadoiro:",
+                    info1: "Zonas habilitadas preto da igrexa e Casa Cultural",
+                    info2Label: "Restauración:",
+                    info2: "Bares e pulperías nas inmediacións",
+                    info3Label: "Transporte:",
+                    info3: "Liñas de autobús desde Vigo e Pontevedra",
+                    info4Label: "Información:",
+                    info4: "Consulta o programa detallado en redes sociais",
+                    info5Label: "Accesibilidade:",
+                    info5: "Espazos adaptados para persoas con mobilidade reducida",
+                    galeriaTitle: "Galería de Fotos",
+                    galeriaDesc: "Revive os mellores momentos das nosas festas na sección de fotos. Imaxes de procesións, verbenas e celebracións que capturan o espírito festivo de Amoedo."
+                }
+            };
+
+            const pt = pageTranslations[currentLang];
+
+            // Actualizar todos los elementos de texto
+            const ids = ['fiestas-title', 'fiestas-intro', 'san-amaro-title', 'san-amaro-date', 
+                'san-amaro-patron', 'san-amaro-music', 'san-amaro-desc', 'programa-title',
+                'prog1', 'prog2', 'prog3', 'prog4', 'prog5', 'orquesta-title', 'orquesta-desc',
+                'san-paio-title', 'paio-date-num', 'paio-date-month', 'paio-event', 'san-paio-desc',
+                'otras-title', 'semana-santa-title', 'fecha-label1', 'semana-santa-date', 
+                'semana-santa-desc', 'san-juan-title', 'fecha-label2', 'san-juan-date', 
+                'san-juan-desc', 'navidad-title', 'fecha-label3', 'navidad-date', 'navidad-desc',
+                'magosto-title', 'fecha-label4', 'magosto-date', 'magosto-desc', 'tradicion-title',
+                'tradicion-desc', 'valor-fiesta1', 'valor-fiesta2', 'valor-fiesta3', 'comision-title',
+                'comision-desc', 'colabora-title', 'colabora-desc', 'info-title', 'info1-label',
+                'info1', 'info2-label', 'info2', 'info3-label', 'info3', 'info4-label', 'info4',
+                'info5-label', 'info5', 'galeria-title', 'galeria-desc'];
+
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                const key = id.replace(/-/g, '').replace(/\d+/g, '');
+                if (el && pt[key]) {
+                    el.textContent = pt[key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

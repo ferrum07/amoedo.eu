@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa Cultural de Amoedo - MercaLibro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/escudo-amoedo.png" alt="Escudo de Amoedo" class="logo-img">
+        <div>
+          <div class="header-title">Amoedo</div>
+          <div class="header-subtitle">Pazos de Borbén · Galicia</div>
+        </div>
+      </a>
+      <div class="header-spacer"></div>
+      <div class="lang-selector">
+        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-link" id="nav-home">Inicio</a>
+      <a href="poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
+      <a href="comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
+      <a href="historia.html" class="nav-link" id="nav-history">Historia</a>
+      <a href="casa-cultural.html" class="nav-link active" id="nav-cultura">Casa Cultural</a>
+      <a href="fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
+      <a href="fotos.html" class="nav-link" id="nav-photos">Fotos</a>
+    </div>
+  </nav>
+
+  <!-- BODY -->
+
+  <div class="page-body">
+    <div class="page-main">
+            <main>
+                <!-- Introducción -->
+                <div class="card reveal">
+                    <h2 id="casa-title">Casa Cultural de Amoedo</h2>
+
+                    <div class="img-placeholder" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);">
+                        🏛️ Casa da Cultura
+                    </div>
+
+
+                    <p id="casa-intro">
+                        La Casa Cultural de Amoedo es el corazón cultural y social de la parroquia. 
+                        Un espacio moderno que combina tradición y vanguardia, donde convive el 
+                        patrimonio histórico con las actividades contemporáneas. <strong>Reformada 
+                        completamente en 2025</strong>, representa el compromiso de Amoedo con la 
+                        cultura y el desarrollo comunitario.
+                    </p>
+                </div>
+
+                <!-- Datos de ubicación -->
+                <div class="card card-blue reveal">
+                    <h2 style="color: #1565c0; border-color: #2196f3;" id="ubicacion-title">📍 Ubicación y Contacto</h2>
+
+                    <div class="info-box">
+                        <strong id="direccion-title">Dirección:</strong><br>
+                        <p>Barrio Iglesia, 6<br>36840 Amoedo - Pazos de Borbén (Pontevedra)</p>
+
+                        <strong id="redes-title">Síguenos en Redes Sociales:</strong><br>
+                        <p>
+                            📘 <a href="https://www.facebook.com/profile.php?id=61579087683428" target="_blank">Facebook: Merca Libro Amoedo</a><br>
+                            📷 <a href="https://www.instagram.com/mercalibroamoedo/" target="_blank">Instagram: @mercalibroamoedo</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Proyecto MercaLibro -->
+                <div class="card card-amber reveal">
+                    <h2 style="color: #e65100; border-color: #ffb74d;">📚 Proyecto MercaLibro</h2>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr;">
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, #d4a373 0%, #c9a87c 100%);">
+                            📖 MERCA LIBRO<br>
+                            <span style="font-size: 0.4em;">A Casa da Cultura Amoedo</span>
+                        </div>
+                    </div>
+
+                    <p id="mercalibro-desc">
+                        <strong>MercaLibro</strong> es un proyecto innovador que busca traer la cultura 
+                        al medio rural. Nacido en Amoedo, este espacio cultural ofrece una amplia variedad 
+                        de actividades formativas, deportivas y sociales para todas las edades. Nuestro 
+                        objetivo es crear un punto de encuentro donde vecinos y visitantes puedan desarrollar 
+                        sus capacidades, compartir conocimientos y fortalecer los lazos comunitarios.
+                    </p>
+
+                    <div class="info-box">
+                        <strong style="color: #2e7d32;">🎯 <span id="mision-title">Nuestra Misión</span></strong>
+                        <p id="mision-desc">
+                            Democratizar el acceso a la cultura y el conocimiento en el ámbito rural, 
+                            ofreciendo espacios de formación, ocio y desarrollo personal para toda la 
+                            comunidad de Amoedo y comarca.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Actividades y Clases -->
+                <div class="card reveal">
+                    <h2 id="actividades-title">🎓 Actividades y Clases</h2>
+
+                    <p id="actividades-intro">
+                        La Casa Cultural de Amoedo - MercaLibro ofrece una programación completa y 
+                        diversa de actividades para todas las edades. Clases impartidas por profesionales 
+                        cualificados en un entorno moderno y acogedor.
+                    </p>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                        <!-- Defensa Personal -->
+                        <div class="card card-terra reveal">
+                            <h3 style="color: #c2185b; margin-top: 0;">🥋 <span id="defensa-title">Defensa Personal</span></h3>
+                            <p id="defensa-horario"><strong id="horario-label">Horario:</strong> Lunes, 19:00h</p>
+                            <p id="defensa-desc">
+                                Clases especializadas de defensa personal para mujeres. Aprende técnicas 
+                                efectivas de autoprotección en un ambiente seguro y de apoyo mutuo.
+                            </p>
+                        </div>
+
+                        <!-- Karate -->
+                        <div class="card card-green reveal">
+                            <h3 style="color: #2e7d32; margin-top: 0;">🥋 <span id="karate-title">Karate</span></h3>
+                            <p id="karate-horarios">
+                                <strong id="horario-label2">Horarios:</strong><br>
+                                • <span id="karate-ninos">Lunes (Niños/as): 17:00h</span><br>
+                                • <span id="karate-adultos">Miércoles (Adultos): 18:00h</span>
+                            </p>
+                            <p id="karate-desc">
+                                Arte marcial tradicional japonés para todas las edades. Desarrollo físico, 
+                                mental y valores como disciplina, respeto y perseverancia.
+                            </p>
+                        </div>
+
+                        <!-- Pilates -->
+                        <div class="card card-blue reveal">
+                            <h3 style="color: #01579b; margin-top: 0;">🧘 <span id="pilates-title">Pilates</span></h3>
+                            <p id="pilates-horario"><strong id="horario-label3">Horario:</strong> Lunes y Miércoles, 10:00h</p>
+                            <p id="pilates-desc">
+                                Método de ejercicio que fortalece el cuerpo, mejora la postura y aporta 
+                                flexibilidad. Ideal para todas las edades y condiciones físicas.
+                            </p>
+                        </div>
+
+                        <!-- Ximnasia -->
+                        <div class="card card-terra reveal">
+                            <h3 style="color: #6a1b9a; margin-top: 0;">💪 <span id="ximnasia-title">Ximnasia</span></h3>
+                            <p id="ximnasia-horario"><strong id="horario-label4">Horario:</strong> Jueves, 19:00h</p>
+                            <p id="ximnasia-desc">
+                                Gimnasia de mantenimiento para mejorar la forma física general. 
+                                Ejercicios adaptados para fortalecer, tonificar y ganar movilidad.
+                            </p>
+                        </div>
+
+                        <!-- Baile -->
+                        <div class="card reveal" style="background: linear-gradient(to bottom, #fff3e0, #ffe0b2); border-color: #ff9800;">
+                            <h3 style="color: #e65100; margin-top: 0;">💃 <span id="baile-title">Baile</span></h3>
+                            <p id="baile-horario"><strong id="horario-label5">Horario:</strong> Martes y Jueves, 10:00h</p>
+                            <p id="baile-desc">
+                                Clases de baile para moverse, divertirse y socializar. Desde ritmos 
+                                tradicionales gallegos hasta bailes modernos.
+                            </p>
+                        </div>
+
+                        <!-- Clases de Refuerzo -->
+                        <div class="card card-blue reveal">
+                            <h3 style="color: #1565c0; margin-top: 0;">📝 <span id="refuerzo-title">Clases de Refuerzo</span></h3>
+                            <p id="refuerzo-horario"><strong id="horario-label6">Horario:</strong> Miércoles y Viernes, 15:30-17:00h</p>
+                            <p id="refuerzo-desc">
+                                Apoyo escolar para estudiantes de Primaria, ESO y Bachillerato. 
+                                Todas las asignaturas: Matemáticas, Lengua, Inglés, Biología, Francés...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reforma 2025 -->
+                <div class="card card-blue reveal">
+                    <h2 style="color: #01579b; border-color: #4fc3f7;" id="reforma-title">🏗️ Reforma 2025: Un Espacio Renovado</h2>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="data-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <span class="data-icon">🔨</span>
+                            <span class="data-number">2025</span>
+                            <span class="data-label" id="reforma-year-label">Año Reforma</span>
+                        </div>
+                        <div class="data-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <span class="data-icon">✨</span>
+                            <span class="data-number">100%</span>
+                            <span class="data-label" id="reforma-modern-label">Modernizada</span>
+                        </div>
+                        <div class="data-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                            <span class="data-icon">🎨</span>
+                            <span class="data-number">Nuevo</span>
+                            <span class="data-label" id="reforma-design-label">Diseño</span>
+                        </div>
+                    </div>
+
+                    <p id="reforma-desc">
+                        En <strong>2025</strong>, la Casa Cultural de Amoedo experimentó una transformación 
+                        completa. La reforma integral ha modernizado todas las instalaciones manteniendo 
+                        el respeto por el patrimonio histórico que la rodea. El nuevo diseño combina 
+                        funcionalidad contemporánea con la estética tradicional gallega, creando un 
+                        espacio acogedor y versátil para todas las actividades culturales.
+                    </p>
+
+                    <div class="info-box">
+                        <strong>🌟 <span id="mejoras-title">Principales Mejoras</span></strong>
+                        <ul id="mejoras-list">
+                            <li>✅ <span id="mejora1">Renovación completa de espacios interiores</span></li>
+                            <li>✅ <span id="mejora2">Equipamiento tecnológico de última generación</span></li>
+                            <li>✅ <span id="mejora3">Mejora de la eficiencia energética</span></li>
+                            <li>✅ <span id="mejora4">Accesibilidad universal mejorada</span></li>
+                            <li>✅ <span id="mejora5">Nuevos espacios polivalentes</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Patrimonio e Historia -->
+                <div class="card card-amber reveal">
+                    <h2 style="color: #d35400; border-color: #ffa502;" id="patrimonio-title">✝️ Patrimonio: El Cruceiro Histórico</h2>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, #967259 0%, #6b4e3d 100%);">
+                            ✝️ Cruceiro
+                        </div>
+                        <div class="img-placeholder" style="background: linear-gradient(135deg, #d4a373 0%, #8b6f47 100%);">
+                            🏛️ Arquitectura
+                        </div>
+                    </div>
+
+                    <p id="cruceiro-desc">
+                        Junto a la Casa Cultural se conserva un <strong>cruceiro histórico de piedra</strong>, 
+                        elemento emblemático del patrimonio gallego. Esta cruz de piedra representa la 
+                        tradición religiosa y cultural de Amoedo, marcando el centro espiritual de la 
+                        parroquia. El cruceiro ha sido cuidadosamente integrado en el diseño del nuevo 
+                        espacio cultural, creando un diálogo único entre pasado y presente, tradición 
+                        y modernidad.
+                    </p>
+
+                    <div class="info-box">
+                        <strong>🏗️ <span id="arquitectura-title">Arquitectura Moderna y Tradición</span></strong>
+                        <p id="arquitectura-desc">
+                            La Casa Cultural de Amoedo es un ejemplo perfecto de cómo la arquitectura 
+                            contemporánea puede convivir armoniosamente con el patrimonio histórico. 
+                            El edificio moderno, con sus líneas limpias y amplios ventanales, contrasta 
+                            y complementa el cruceiro centenario, creando un espacio donde la historia 
+                            y el futuro se encuentran.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Instalaciones -->
+                <div class="card reveal">
+                    <h2 id="instalaciones-title">🏢 Instalaciones</h2>
+
+                    <p id="instalaciones-desc">
+                        Tras la reforma de 2025, la Casa Cultural de Amoedo cuenta con instalaciones 
+                        modernas y versátiles, diseñadas para acoger todo tipo de actividades culturales, 
+                        formativas y sociales:
+                    </p>
+
+                    <ul id="instalaciones-list">
+                        <li>✅ <strong id="inst1">Salas multiusos amplias y luminosas</strong></li>
+                        <li>✅ <strong id="inst2">Espacio para clases de actividad física</strong></li>
+                        <li>✅ <strong id="inst3">Aulas equipadas para formación</strong></li>
+                        <li>✅ <strong id="inst4">Zona exterior ajardinada con patrimonio histórico</strong></li>
+                        <li>✅ <strong id="inst5">Accesibilidad universal para personas con movilidad reducida</strong></li>
+                        <li>✅ <strong id="inst6">Aparcamiento próximo</strong></li>
+                        <li>✅ <strong id="inst7">Climatización eficiente y equipamiento moderno</strong></li>
+                        <li>✅ <strong id="inst8">Sistema audiovisual de última generación</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Inscripciones e Información -->
+                <div class="card card-green reveal">
+                    <h2 style="color: #2e7d32; border-color: #66bb6a;" id="inscripciones-title">📋 Inscripciones e Información</h2>
+
+                    <p id="inscripciones-desc">
+                        Para inscribirte en cualquiera de nuestras actividades, solicitar información 
+                        sobre horarios, precios o proponer nuevas actividades, puedes contactar con nosotros:
+                    </p>
+
+                    <div class="info-box">
+                        <strong>📞 <span id="contacto-title">Contacto MercaLibro</span></strong>
+                        <p id="contacto-info">
+                            📍 <strong id="direccion2">Dirección:</strong> Barrio Iglesia, 6 - 36840 Amoedo<br>
+                            📘 <strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61579087683428" target="_blank">Merca Libro Amoedo</a><br>
+                            📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/mercalibroamoedo/" target="_blank">@mercalibroamoedo</a><br><br>
+                            <span id="info-adicional">También puedes acercarte directamente a la Casa Cultural durante las horas de 
+                            actividad para conocer las instalaciones y hablar con los monitores.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Compromiso con el Rural -->
+                <div class="card card-terra reveal">
+                    <h2 style="color: #6a1b9a; border-color: #ba68c8;" id="compromiso-title">🌟 Compromiso con el Medio Rural</h2>
+
+                    <p id="compromiso-desc">
+                        El proyecto <strong>MercaLibro - Casa Cultural de Amoedo</strong> nace con 
+                        la firme convicción de que la cultura no debe ser un privilegio exclusivo de 
+                        las ciudades. Creemos en el potencial del medio rural como espacio de desarrollo 
+                        cultural, educativo y social.
+                    </p>
+
+                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="info-box">
+                            <strong>🎨</strong>
+                            <p id="valor1">Acceso a la cultura para todos</p>
+                        </div>
+                        <div class="info-box">
+                            <strong>👥</strong>
+                            <p id="valor2">Fortalecimiento comunitario</p>
+                        </div>
+                        <div class="info-box">
+                            <strong>🌱</strong>
+                            <p id="valor3">Desarrollo sostenible del rural</p>
+                        </div>
+                    </div>
+
+                    <p id="vision">
+                        <strong id="vision-title">Nuestra visión:</strong> <span id="vision-texto">Hacer de Amoedo un referente cultural 
+                        en la comarca, donde tradición y modernidad convivan en armonía, y donde cada 
+                        vecino pueda encontrar oportunidades de crecimiento personal y colectivo.</span>
+                    </p>
+                </div>
+
+            </main>
+        </div>
+
+  </div><!-- /page-body -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p id="footer-text">Amoedo, 2026 · Pazos de Borbén, Galicia</p>
+  </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function updatePageTexts() {
+            const pageTranslations = {
+                es: {
+                    casaTitle: "Casa Cultural de Amoedo",
+                    casaIntro: "La Casa Cultural de Amoedo es el corazón cultural y social de la parroquia. Un espacio moderno que combina tradición y vanguardia, donde convive el patrimonio histórico con las actividades contemporáneas. Reformada completamente en 2025, representa el compromiso de Amoedo con la cultura y el desarrollo comunitario.",
+                    ubicacionTitle: "Ubicación y Contacto",
+                    direccionTitle: "Dirección:",
+                    redesTitle: "Síguenos en Redes Sociales:",
+                    mercalibroDesc: "MercaLibro es un proyecto innovador que busca traer la cultura al medio rural. Nacido en Amoedo, este espacio cultural ofrece una amplia variedad de actividades formativas, deportivas y sociales para todas las edades. Nuestro objetivo es crear un punto de encuentro donde vecinos y visitantes puedan desarrollar sus capacidades, compartir conocimientos y fortalecer los lazos comunitarios.",
+                    misionTitle: "Nuestra Misión",
+                    misionDesc: "Democratizar el acceso a la cultura y el conocimiento en el ámbito rural, ofreciendo espacios de formación, ocio y desarrollo personal para toda la comunidad de Amoedo y comarca.",
+                    actividadesTitle: "Actividades y Clases",
+                    actividadesIntro: "La Casa Cultural de Amoedo - MercaLibro ofrece una programación completa y diversa de actividades para todas las edades. Clases impartidas por profesionales cualificados en un entorno moderno y acogedor.",
+                    defensaTitle: "Defensa Personal",
+                    horarioLabel: "Horario:",
+                    defensaDesc: "Clases especializadas de defensa personal para mujeres. Aprende técnicas efectivas de autoprotección en un ambiente seguro y de apoyo mutuo.",
+                    karateTitle: "Karate",
+                    karateNinos: "Lunes (Niños/as): 17:00h",
+                    karateAdultos: "Miércoles (Adultos): 18:00h",
+                    karateDesc: "Arte marcial tradicional japonés para todas las edades. Desarrollo físico, mental y valores como disciplina, respeto y perseverancia.",
+                    pilatesTitle: "Pilates",
+                    pilatesDesc: "Método de ejercicio que fortalece el cuerpo, mejora la postura y aporta flexibilidad. Ideal para todas las edades y condiciones físicas.",
+                    ximnasiaTitle: "Ximnasia",
+                    ximnasiaDesc: "Gimnasia de mantenimiento para mejorar la forma física general. Ejercicios adaptados para fortalecer, tonificar y ganar movilidad.",
+                    baileTitle: "Baile",
+                    baileDesc: "Clases de baile para moverse, divertirse y socializar. Desde ritmos tradicionales gallegos hasta bailes modernos.",
+                    refuerzoTitle: "Clases de Refuerzo",
+                    refuerzoDesc: "Apoyo escolar para estudiantes de Primaria, ESO y Bachillerato. Todas las asignaturas: Matemáticas, Lengua, Inglés, Biología, Francés...",
+                    reformaTitle: "Reforma 2025: Un Espacio Renovado",
+                    reformaYearLabel: "Año Reforma",
+                    reformaModernLabel: "Modernizada",
+                    reformaDesignLabel: "Diseño",
+                    reformaDesc: "En 2025, la Casa Cultural de Amoedo experimentó una transformación completa. La reforma integral ha modernizado todas las instalaciones manteniendo el respeto por el patrimonio histórico que la rodea. El nuevo diseño combina funcionalidad contemporánea con la estética tradicional gallega, creando un espacio acogedor y versátil para todas las actividades culturales.",
+                    mejorasTitle: "Principales Mejoras",
+                    mejora1: "Renovación completa de espacios interiores",
+                    mejora2: "Equipamiento tecnológico de última generación",
+                    mejora3: "Mejora de la eficiencia energética",
+                    mejora4: "Accesibilidad universal mejorada",
+                    mejora5: "Nuevos espacios polivalentes",
+                    patrimonioTitle: "Patrimonio: El Cruceiro Histórico",
+                    cruceroDesc: "Junto a la Casa Cultural se conserva un cruceiro histórico de piedra, elemento emblemático del patrimonio gallego. Esta cruz de piedra representa la tradición religiosa y cultural de Amoedo, marcando el centro espiritual de la parroquia. El cruceiro ha sido cuidadosamente integrado en el diseño del nuevo espacio cultural, creando un diálogo único entre pasado y presente, tradición y modernidad.",
+                    arquitecturaTitle: "Arquitectura Moderna y Tradición",
+                    arquitecturaDesc: "La Casa Cultural de Amoedo es un ejemplo perfecto de cómo la arquitectura contemporánea puede convivir armoniosamente con el patrimonio histórico. El edificio moderno, con sus líneas limpias y amplios ventanales, contrasta y complementa el cruceiro centenario, creando un espacio donde la historia y el futuro se encuentran.",
+                    instalacionesTitle: "Instalaciones",
+                    instalacionesDesc: "Tras la reforma de 2025, la Casa Cultural de Amoedo cuenta con instalaciones modernas y versátiles, diseñadas para acoger todo tipo de actividades culturales, formativas y sociales:",
+                    inst1: "Salas multiusos amplias y luminosas",
+                    inst2: "Espacio para clases de actividad física",
+                    inst3: "Aulas equipadas para formación",
+                    inst4: "Zona exterior ajardinada con patrimonio histórico",
+                    inst5: "Accesibilidad universal para personas con movilidad reducida",
+                    inst6: "Aparcamiento próximo",
+                    inst7: "Climatización eficiente y equipamiento moderno",
+                    inst8: "Sistema audiovisual de última generación",
+                    inscripcionesTitle: "Inscripciones e Información",
+                    inscripcionesDesc: "Para inscribirte en cualquiera de nuestras actividades, solicitar información sobre horarios, precios o proponer nuevas actividades, puedes contactar con nosotros:",
+                    contactoTitle: "Contacto MercaLibro",
+                    direccion2: "Dirección:",
+                    infoAdicional: "También puedes acercarte directamente a la Casa Cultural durante las horas de actividad para conocer las instalaciones y hablar con los monitores.",
+                    compromisoTitle: "Compromiso con el Medio Rural",
+                    compromisoDesc: "El proyecto MercaLibro - Casa Cultural de Amoedo nace con la firme convicción de que la cultura no debe ser un privilegio exclusivo de las ciudades. Creemos en el potencial del medio rural como espacio de desarrollo cultural, educativo y social.",
+                    valor1: "Acceso a la cultura para todos",
+                    valor2: "Fortalecimiento comunitario",
+                    valor3: "Desarrollo sostenible del rural",
+                    visionTitle: "Nuestra visión:",
+                    visionTexto: "Hacer de Amoedo un referente cultural en la comarca, donde tradición y modernidad convivan en armonía, y donde cada vecino pueda encontrar oportunidades de crecimiento personal y colectivo."
+                },
+                gl: {
+                    casaTitle: "Casa Cultural de Amoedo",
+                    casaIntro: "A Casa Cultural de Amoedo é o corazón cultural e social da parroquia. Un espazo moderno que combina tradición e vangarda, onde convive o patrimonio histórico coas actividades contemporáneas. Reformada completamente en 2025, representa o compromiso de Amoedo coa cultura e o desenvolvemento comunitario.",
+                    ubicacionTitle: "Ubicación e Contacto",
+                    direccionTitle: "Dirección:",
+                    redesTitle: "Síguenos nas Redes Sociais:",
+                    mercalibroDesc: "MercaLibro é un proxecto innovador que busca traer a cultura ao medio rural. Nacido en Amoedo, este espazo cultural ofrece unha ampla variedade de actividades formativas, deportivas e sociais para todas as idades. O noso obxectivo é crear un punto de encontro onde veciños e visitantes poidan desenvolver as súas capacidades, compartir coñecementos e fortalecer os lazos comunitarios.",
+                    misionTitle: "A Nosa Misión",
+                    misionDesc: "Democratizar o acceso á cultura e o coñecemento no ámbito rural, ofrecendo espazos de formación, lecer e desenvolvemento persoal para toda a comunidade de Amoedo e comarca.",
+                    actividadesTitle: "Actividades e Clases",
+                    actividadesIntro: "A Casa Cultural de Amoedo - MercaLibro ofrece unha programación completa e diversa de actividades para todas as idades. Clases impartidas por profesionais cualificados nun contorno moderno e acolledor.",
+                    defensaTitle: "Defensa Persoal",
+                    horarioLabel: "Horario:",
+                    defensaDesc: "Clases especializadas de defensa persoal para mulleres. Aprende técnicas efectivas de autoprotección nun ambiente seguro e de apoio mutuo.",
+                    karateTitle: "Karate",
+                    karateNinos: "Luns (Nenos/as): 17:00h",
+                    karateAdultos: "Mércores (Adultos): 18:00h",
+                    karateDesc: "Arte marcial tradicional xaponés para todas as idades. Desenvolvemento físico, mental e valores como disciplina, respeto e perseveranza.",
+                    pilatesTitle: "Pilates",
+                    pilatesDesc: "Método de exercicio que fortalece o corpo, mellora a postura e achega flexibilidade. Ideal para todas as idades e condicións físicas.",
+                    ximnasiaTitle: "Ximnasia",
+                    ximnasiaDesc: "Ximnasia de mantemento para mellorar a forma física xeral. Exercicios adaptados para fortalecer, tonificar e gañar mobilidade.",
+                    baileTitle: "Baile",
+                    baileDesc: "Clases de baile para moverse, divertirse e socializar. Desde ritmos tradicionais galegos ata bailes modernos.",
+                    refuerzoTitle: "Clases de Reforzo",
+                    refuerzoDesc: "Apoio escolar para estudantes de Primaria, ESO e Bacharelato. Todas as asignaturas: Matemáticas, Lingua, Inglés, Bioloxía, Francés...",
+                    reformaTitle: "Reforma 2025: Un Espazo Renovado",
+                    reformaYearLabel: "Ano Reforma",
+                    reformaModernLabel: "Modernizada",
+                    reformaDesignLabel: "Deseño",
+                    reformaDesc: "En 2025, a Casa Cultural de Amoedo experimentou unha transformación completa. A reforma integral modernizou todas as instalacións mantendo o respecto polo patrimonio histórico que a rodea. O novo deseño combina funcionalidade contemporánea coa estética tradicional galega, creando un espazo acolledor e versátil para todas as actividades culturais.",
+                    mejorasTitle: "Principais Melloras",
+                    mejora1: "Renovación completa de espazos interiores",
+                    mejora2: "Equipamento tecnolóxico de última xeración",
+                    mejora3: "Mellora da eficiencia enerxética",
+                    mejora4: "Accesibilidade universal mellorada",
+                    mejora5: "Novos espazos polivalentes",
+                    patrimonioTitle: "Patrimonio: O Cruceiro Histórico",
+                    cruceroDesc: "Xunto á Casa Cultural consérvase un cruceiro histórico de pedra, elemento emblemático do patrimonio galego. Esta cruz de pedra representa a tradición relixiosa e cultural de Amoedo, marcando o centro espiritual da parroquia. O cruceiro foi coidadosamente integrado no deseño do novo espazo cultural, creando un diálogo único entre pasado e presente, tradición e modernidade.",
+                    arquitecturaTitle: "Arquitectura Moderna e Tradición",
+                    arquitecturaDesc: "A Casa Cultural de Amoedo é un exemplo perfecto de como a arquitectura contemporánea pode convivir harmoniosamente co patrimonio histórico. O edificio moderno, coas súas liñas limpas e amplos ventanais, contrasta e complementa o cruceiro centenario, creando un espazo onde a historia e o futuro se encontran.",
+                    instalacionesTitle: "Instalacións",
+                    instalacionesDesc: "Tras a reforma de 2025, a Casa Cultural de Amoedo conta con instalacións modernas e versátiles, deseñadas para acoller todo tipo de actividades culturais, formativas e sociais:",
+                    inst1: "Salas multiusos amplas e luminosas",
+                    inst2: "Espazo para clases de actividade física",
+                    inst3: "Aulas equipadas para formación",
+                    inst4: "Zona exterior axardinada con patrimonio histórico",
+                    inst5: "Accesibilidade universal para persoas con mobilidade reducida",
+                    inst6: "Aparcadoiro próximo",
+                    inst7: "Climatización eficiente e equipamento moderno",
+                    inst8: "Sistema audiovisual de última xeración",
+                    inscripcionesTitle: "Inscricións e Información",
+                    inscripcionesDesc: "Para inscribirte en calquera das nosas actividades, solicitar información sobre horarios, prezos ou propoñer novas actividades, podes contactar con nós:",
+                    contactoTitle: "Contacto MercaLibro",
+                    direccion2: "Dirección:",
+                    infoAdicional: "Tamén podes achegarte directamente á Casa Cultural durante as horas de actividade para coñecer as instalacións e falar cos monitores.",
+                    compromisoTitle: "Compromiso co Medio Rural",
+                    compromisoDesc: "O proxecto MercaLibro - Casa Cultural de Amoedo nace coa firme convicción de que a cultura non debe ser un privilexio exclusivo das cidades. Cremos no potencial do medio rural como espazo de desenvolvemento cultural, educativo e social.",
+                    valor1: "Acceso á cultura para todos",
+                    valor2: "Fortalecemento comunitario",
+                    valor3: "Desenvolvemento sostible do rural",
+                    visionTitle: "A Nosa Visión:",
+                    visionTexto: "Facer de Amoedo un referente cultural na comarca, onde tradición e modernidade convivan en harmonía, e onde cada veciño poida atopar oportunidades de crecemento persoal e colectivo."
+                }
+            };
+
+            const pt = pageTranslations[currentLang];
+
+            // Actualizar todos los elementos
+            const ids = ['casa-title', 'casa-intro', 'ubicacion-title', 'direccion-title', 'redes-title',
+                'mercalibro-desc', 'mision-title', 'mision-desc', 'actividades-title', 'actividades-intro',
+                'defensa-title', 'horario-label', 'defensa-desc', 'karate-title', 'karate-ninos', 
+                'karate-adultos', 'karate-desc', 'pilates-title', 'pilates-desc', 'ximnasia-title',
+                'ximnasia-desc', 'baile-title', 'baile-desc', 'refuerzo-title', 'refuerzo-desc',
+                'reforma-title', 'reforma-year-label', 'reforma-modern-label', 'reforma-design-label',
+                'reforma-desc', 'mejoras-title', 'mejora1', 'mejora2', 'mejora3', 'mejora4', 'mejora5',
+                'patrimonio-title', 'cruceiro-desc', 'arquitectura-title', 'arquitectura-desc',
+                'instalaciones-title', 'instalaciones-desc', 'inst1', 'inst2', 'inst3', 'inst4',
+                'inst5', 'inst6', 'inst7', 'inst8', 'inscripciones-title', 'inscripciones-desc',
+                'contacto-title', 'direccion2', 'info-adicional', 'compromiso-title', 'compromiso-desc',
+                'valor1', 'valor2', 'valor3', 'vision-title', 'vision-texto'];
+
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                const key = id.replace(/-/g, '').replace(/\d+/g, '');
+                if (el && pt[key]) {
+                    el.textContent = pt[key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>

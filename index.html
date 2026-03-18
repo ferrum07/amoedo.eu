@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amoedo — Pazos de Borbén</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/escudo-amoedo.png" alt="Escudo de Amoedo" class="logo-img">
+        <div>
+          <div class="header-title">Amoedo</div>
+          <div class="header-subtitle">Pazos de Borbén · Galicia</div>
+        </div>
+      </a>
+      <div class="header-spacer"></div>
+      <div class="lang-selector">
+        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-link active" id="nav-home">Inicio</a>
+      <a href="pages/poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
+      <a href="pages/comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
+      <a href="pages/historia.html" class="nav-link" id="nav-history">Historia</a>
+      <a href="pages/casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
+      <a href="pages/fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
+      <a href="pages/fotos.html" class="nav-link" id="nav-photos">Fotos</a>
+    </div>
+  </nav>
+
+  <!-- BODY -->
+  <div class="page-body">
+    <div class="page-grid">
+
+      <!-- MAIN -->
+      <main class="page-main">
+
+        <div class="card reveal">
+          <h2>🏞️ <span id="welcome-title">Bienvenidos al Paraíso Rural</span></h2>
+
+          <div class="img-placeholder" style="background: linear-gradient(135deg, #2a4d35 0%, #3d7548 60%, #72b583 100%);">
+            🏔️ &nbsp; Vista de Amoedo
+          </div>
+
+          <p id="welcome-text">
+            Descubre la magia de Amoedo. Donde el verde de nuestros montes se encuentra
+            con la tranquilidad del futuro. Un lugar ideal para desconectar y respirar aire puro.
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <h2>📍 <span id="places-title">Lugares de Interés</span></h2>
+
+          <div class="data-grid">
+            <div class="data-item">
+              <span class="data-icon">🏔️</span>
+              <span class="data-label" id="place-1">O Pouso</span>
+            </div>
+            <div class="data-item">
+              <span class="data-icon">⛪</span>
+              <span class="data-label" id="place-2">La Iglesia</span>
+            </div>
+            <div class="data-item">
+              <span class="data-icon">🥾</span>
+              <span class="data-label" id="place-3">Rutas de Senderismo</span>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- ASIDE -->
+      <aside class="page-aside">
+
+        <div class="widget weather-widget reveal" id="weather-widget">
+          <h3 id="weather-title">El Tiempo</h3>
+          <div id="weather-loading" class="loading">Cargando datos del tiempo…</div>
+        </div>
+
+        <div class="widget event-widget reveal">
+          <h3 id="event-title">Próximo Evento</h3>
+          <div class="event-content">
+            <span class="event-icon">🎉</span>
+            <h4 id="event-name">Romaría de San Amaro</h4>
+            <p class="event-date" id="event-date">15 de enero de 2026</p>
+            <div class="countdown">
+              <span class="countdown-number" id="days-left">—</span>
+              <span class="countdown-label" id="days-label">días</span>
+            </div>
+            <p class="event-desc" id="event-desc">Misa, procesión y verbena con Orquesta Saudade</p>
+            <a href="pages/fiestas.html" class="btn btn-amber" id="event-btn">Ver programa</a>
+          </div>
+        </div>
+
+        <div class="widget links-widget reveal">
+          <h3 id="links-title">Enlaces</h3>
+          <ul>
+            <li><a href="https://pazosdeborben.sedelectronica.gal/" target="_blank" id="link-1">Concello de Pazos</a></li>
+            <li><a href="https://www.turismo.gal/que-facer/espazos-naturais" target="_blank" id="link-2">Turismo Rías Baixas</a></li>
+            <li><a href="https://comunidademontesam.wixsite.com/2021" target="_blank" id="link-3">Comunidad de Montes</a></li>
+          </ul>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p id="footer-text">Amoedo, 2026 &nbsp;·&nbsp; Pazos de Borbén, Galicia</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
