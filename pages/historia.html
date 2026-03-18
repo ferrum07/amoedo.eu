@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia de Amoedo</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia de Amoedo</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+  <!-- EVENT BANNER -->
+  <div class="event-banner">
+    <span>🎉 Romaría de San Amaro · 15 de enero</span>
+    <span class="banner-countdown" id="banner-countdown">cargando...</span>
+    <a href="../pages/fiestas.html">Ver programa</a>
+  </div>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
@@ -18,401 +26,206 @@
         </div>
       </a>
       <div class="header-spacer"></div>
-      <div class="lang-selector">
-        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
-        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      <div class="header-actions">
+        <button class="dark-toggle" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+        <div class="lang-selector">
+          <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+          <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- NAV -->
+  <!-- DESKTOP NAV -->
   <nav class="site-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-link" id="nav-home">Inicio</a>
-      <a href="poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
-      <a href="comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
-      <a href="historia.html" class="nav-link active" id="nav-history">Historia</a>
-      <a href="casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
-      <a href="fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
-      <a href="fotos.html" class="nav-link" id="nav-photos">Fotos</a>
+      <a href="../pages/poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
+      <a href="../pages/comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
+      <a href="../pages/historia.html" class="nav-link active" id="nav-history">Historia</a>
+      <a href="../pages/casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
+      <a href="../pages/fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
+      <a href="../pages/fotos.html" class="nav-link" id="nav-photos">Fotos</a>
     </div>
   </nav>
 
-  <!-- BODY -->
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close">✕</button>
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="../pages/poligono.html" class="nav-link">Polígono</a>
+    <a href="../pages/comunidad-montes.html" class="nav-link">Comunidad de Montes</a>
+    <a href="../pages/historia.html" class="nav-link active">Historia</a>
+    <a href="../pages/casa-cultural.html" class="nav-link">Casa Cultural</a>
+    <a href="../pages/fiestas.html" class="nav-link">Fiestas</a>
+    <a href="../pages/fotos.html" class="nav-link">Fotos</a>
+  </div>
 
   <div class="page-body">
-    <div class="page-main">
-            <main>
-                <div class="card reveal">
-                    <h2 id="historia-title">📜 Historia de Amoedo</h2>
+    <main class="page-main">
 
-                    <div class="img-placeholder" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);">
-                        🏛️ Patrimonio Histórico
-                    </div>
-
-
-                    <p id="historia-intro">
-                        La parroquia de <strong>San Amaro de Amoedo</strong> tiene una rica historia 
-                        que se remonta a tiempos medievales. Su patrimonio cultural, tradiciones y 
-                        legado histórico forman parte fundamental de la identidad de sus vecinos.
-                    </p>
-                </div>
-
-                <div class="card reveal">
-                    <h2 id="origenes-title">🏰 Orígenes Medievales</h2>
-                    <p id="origenes-desc">
-                        El topónimo "Amoedo" proviene del latín <em>amoenum</em>, que significa 
-                        "ameno" o "agradable", en referencia a las características del territorio. 
-                        La parroquia tiene documentación histórica que se remonta al siglo XIII, 
-                        cuando ya aparecía mencionada en archivos eclesiásticos.
-                    </p>
-
-                    <div class="info-box">
-                        <strong>📖 <span id="documentacion-title">Primeras referencias documentales</span></strong>
-                        <p id="documentacion-desc">
-                            Los primeros registros escritos de Amoedo aparecen en documentos 
-                            eclesiásticos del <strong>siglo XIII</strong>, vinculados a la 
-                            organización territorial de la Iglesia en Galicia. La parroquia 
-                            formaba parte del antiguo arciprestazgo de Morrazo.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="card card-amber reveal">
-                    <h2 style="color: #e65100; border-color: #ffb74d;" id="san-amaro-title">⛪ San Amaro: Patrón de Amoedo</h2>
-                    <p id="san-amaro-desc">
-                        La parroquia está bajo la advocación de <strong>San Amaro</strong>, 
-                        un santo peregrino de origen legendario muy venerado en Galicia. 
-                        Según la tradición, San Amaro fue un monje benedictino que realizó 
-                        un largo viaje en busca del Paraíso Terrenal.
-                    </p>
-
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
-                        <div class="info-box">
-                            <strong>🙏 <span id="devocion-title">Devoción Popular</span></strong>
-                            <p id="devocion-desc">
-                                La devoción a San Amaro se mantiene viva en Amoedo desde hace 
-                                siglos, celebrándose su fiesta el 15 de enero con gran 
-                                participación de vecinos y visitantes.
-                            </p>
-                        </div>
-                        <div class="info-box">
-                            <strong>📅 <span id="festividad-title">Festividad</span></strong>
-                            <p id="festividad-desc">
-                                La Romaría de San Amaro es la celebración más importante de 
-                                la parroquia, combinando actos religiosos con festividades 
-                                populares.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card reveal">
-                    <h2 id="iglesia-title">⛪ Iglesia Parroquial</h2>
-                    <p id="iglesia-desc">
-                        La <strong>Iglesia de San Amaro</strong> es el templo parroquial de 
-                        Amoedo. Aunque ha sufrido diversas reformas a lo largo de los siglos, 
-                        conserva elementos arquitectónicos de interés y sigue siendo el centro 
-                        espiritual y social de la comunidad.
-                    </p>
-
-                    <div class="info-box">
-                        <strong>🏛️ <span id="arquitectura-title">Elementos arquitectónicos</span></strong>
-                        <ul id="arquitectura-list" style="margin: 10px 0;">
-                            <li><span id="elemento1">Planta de nave única con capillas laterales</span></li>
-                            <li><span id="elemento2">Campanario de estilo tradicional gallego</span></li>
-                            <li><span id="elemento3">Retablo mayor dedicado a San Amaro</span></li>
-                            <li><span id="elemento4">Imágenes religiosas de valor artístico</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card card-green reveal">
-                    <h2 style="color: #2e7d32; border-color: #66bb6a;" id="siglo-xx-title">🏗️ Siglo XX: Transformaciones</h2>
-                    <p id="siglo-xx-desc">
-                        El siglo XX trajo importantes cambios a Amoedo. La emigración a 
-                        ciudades y al extranjero marcó profundamente a la comunidad, aunque 
-                        muchos vecinos mantuvieron sus vínculos con la parroquia.
-                    </p>
-
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-                        <div class="info-box">
-                            <strong>📉</strong>
-                            <p id="cambio1">Emigración Rural</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>💡</strong>
-                            <p id="cambio2">Electrificación</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>🚗</strong>
-                            <p id="cambio3">Mejoras en Carreteras</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card reveal">
-                    <h2 id="siglo-xxi-title">🌟 Siglo XXI: Desarrollo y Futuro</h2>
-                    <p id="siglo-xxi-intro">
-                        El nuevo milenio ha traído un renovado impulso a Amoedo con proyectos 
-                        de desarrollo que combinan modernidad con respeto al patrimonio.
-                    </p>
-
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
-                        <div class="card card-blue reveal">
-                            <h3 style="color: #1565c0; margin-top: 0;">🏭 <span id="hito1-title">Polígono Industrial (2006)</span></h3>
-                            <p id="hito1-desc">
-                                Inauguración del Polígono Industrial Chan de Amoedo, 
-                                impulsando el desarrollo económico de la zona.
-                            </p>
-                        </div>
-
-                        <div class="card card-terra reveal">
-                            <h3 style="color: #6a1b9a; margin-top: 0;">🌐 <span id="hito2-title">Fibra Óptica (2020)</span></h3>
-                            <p id="hito2-desc">
-                                Llegada de la fibra óptica de alta velocidad, conectando 
-                                Amoedo con el mundo digital.
-                            </p>
-                        </div>
-
-                        <div class="card card-amber reveal">
-                            <h3 style="color: #e65100; margin-top: 0;">📚 <span id="hito3-title">Digitalización (2025)</span></h3>
-                            <p id="hito3-desc">
-                                Proyecto de digitalización del archivo parroquial para 
-                                preservar la memoria histórica.
-                            </p>
-                        </div>
-
-                        <div class="card card-green reveal">
-                            <h3 style="color: #2e7d32; margin-top: 0;">🏛️ <span id="hito4-title">Casa Cultural (2025)</span></h3>
-                            <p id="hito4-desc">
-                                Reforma integral de la Casa Cultural con nuevos espacios 
-                                y servicios para la comunidad.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-amber reveal">
-                    <h2 style="color: #d35400; border-color: #ffa502;" id="digitalizacion-title">💾 Proyecto de Digitalización (2025)</h2>
-                    <p id="digitalizacion-desc">
-                        En <strong>2025</strong>, la parroquia de Amoedo ha emprendido un 
-                        ambicioso proyecto de <strong>digitalización del archivo parroquial</strong>. 
-                        Este proyecto busca preservar la memoria histórica de la comunidad 
-                        mediante la conversión de documentos antiguos en formato digital.
-                    </p>
-
-                    <div class="info-box">
-                        <strong>🎯 <span id="objetivos-digitalizacion-title">Objetivos del Proyecto</span></strong>
-                        <ul id="objetivos-digitalizacion-list" style="margin: 10px 0;">
-                            <li><span id="objetivo1">Preservación de documentos históricos (registros, actas, fotografías)</span></li>
-                            <li><span id="objetivo2">Acceso digital al patrimonio documental</span></li>
-                            <li><span id="objetivo3">Investigación genealógica facilitada</span></li>
-                            <li><span id="objetivo4">Protección contra deterioro y pérdida</span></li>
-                            <li><span id="objetivo5">Difusión de la historia local</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-                        <div class="data-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <span class="data-icon">📄</span>
-                            <span class="data-label" id="dato-digital1">Documentos Históricos</span>
-                        </div>
-                        <div class="data-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                            <span class="data-icon">📸</span>
-                            <span class="data-label" id="dato-digital2">Fotografías Antiguas</span>
-                        </div>
-                        <div class="data-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                            <span class="data-icon">💻</span>
-                            <span class="data-label" id="dato-digital3">Acceso Online</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card reveal">
-                    <h2 id="patrimonio-title">🏛️ Patrimonio y Tradición</h2>
-                    <p id="patrimonio-desc">
-                        Amoedo conserva un valioso patrimonio cultural que va más allá de 
-                        sus monumentos. Las tradiciones orales, fiestas populares y costumbres 
-                        forman parte de un legado inmaterial que se transmite de generación 
-                        en generación.
-                    </p>
-
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-                        <div class="info-box">
-                            <strong>🎭</strong>
-                            <p id="patrimonio1">Tradiciones Orales</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>🎉</strong>
-                            <p id="patrimonio2">Fiestas Patronales</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>🌳</strong>
-                            <p id="patrimonio3">Montes Comunales</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>🥘</strong>
-                            <p id="patrimonio4">Gastronomía Local</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>🎵</strong>
-                            <p id="patrimonio5">Música Tradicional</p>
-                        </div>
-                        <div class="info-box">
-                            <strong>✝️</strong>
-                            <p id="patrimonio6">Devoción Religiosa</p>
-                        </div>
-                    </div>
-                </div>
-
-            </main>
+      <div class="card reveal">
+        <h2 id="historia-title">📜 Historia de Amoedo</h2>
+        <div class="img-placeholder" style="background:linear-gradient(135deg,#6b3a2a,#a05030);">
+          🏛️ &nbsp; Patrimonio Histórico
         </div>
+        <p id="historia-intro">
+          La parroquia de <strong>San Amaro de Amoedo</strong> tiene una rica historia
+          que se remonta a tiempos medievales. Su patrimonio cultural, tradiciones y
+          legado histórico forman parte fundamental de la identidad de sus vecinos.
+        </p>
+      </div>
 
-  </div><!-- /page-body -->
+      <!-- LÍNEA DE TIEMPO -->
+      <div class="card reveal">
+        <h2>⏳ Línea del Tiempo</h2>
+        <div class="timeline">
 
-  <!-- FOOTER -->
+          <div class="tl-item">
+            <div class="tl-dot amber">XIII</div>
+            <div class="tl-year">Siglo XIII</div>
+            <div class="tl-title">Primeras referencias documentales</div>
+            <div class="tl-desc">Los primeros registros escritos de Amoedo aparecen en documentos eclesiásticos, vinculados a la organización territorial de la Iglesia en Galicia. La parroquia formaba parte del antiguo arciprestazgo de Morrazo.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot">XIV</div>
+            <div class="tl-year">Edad Media</div>
+            <div class="tl-title">Origen del topónimo</div>
+            <div class="tl-desc">El topónimo "Amoedo" proviene del latín <em>amoenum</em> ("ameno" o "agradable"), en referencia a las características del territorio. La parroquia consolida su identidad bajo la advocación de San Amaro.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot amber">XVI</div>
+            <div class="tl-year">Siglo XVI</div>
+            <div class="tl-title">Construcción de la Iglesia Parroquial</div>
+            <div class="tl-desc">Erección del templo parroquial de San Amaro con planta de nave única y campanario de estilo tradicional gallego. El retablo mayor, dedicado al patrón, es una pieza de notable valor artístico.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot">XIX</div>
+            <div class="tl-year">Siglo XIX</div>
+            <div class="tl-title">Romaría de San Amaro — Tradición consolidada</div>
+            <div class="tl-desc">La fiesta patronal del 15 de enero se convierte en la celebración más importante de la parroquia, combinando actos religiosos, procesión y verbena popular.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot terra">1950</div>
+            <div class="tl-year">Mediados siglo XX</div>
+            <div class="tl-title">Emigración y transformaciones</div>
+            <div class="tl-desc">La emigración a ciudades y al extranjero marca profundamente a la comunidad. Sin embargo, los vínculos con la parroquia se mantienen vivos. Llegan la electrificación y las mejoras de carreteras.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot blue">2006</div>
+            <div class="tl-year">2006</div>
+            <div class="tl-title">Inauguración del Polígono Industrial</div>
+            <div class="tl-desc">Apertura del Polígono Industrial Chan de Amoedo (139.863 m²), impulsando el desarrollo económico de la parroquia y el municipio. Se convierte en polo de empleo de la zona sur de Pontevedra.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot blue">2020</div>
+            <div class="tl-year">2020</div>
+            <div class="tl-title">Llegada de la fibra óptica</div>
+            <div class="tl-desc">El polígono industrial y toda la parroquia se conectan a internet de alta velocidad, transformando la vida cotidiana y la competitividad empresarial de la zona.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot">2025</div>
+            <div class="tl-year">2025</div>
+            <div class="tl-title">Digitalización del archivo parroquial</div>
+            <div class="tl-desc">Proyecto de preservación de documentos históricos desde el siglo XIII en formato digital, facilitando el acceso al patrimonio documental y la investigación genealógica.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot">2025</div>
+            <div class="tl-year">2025</div>
+            <div class="tl-title">Reforma de la Casa Cultural</div>
+            <div class="tl-desc">Reforma integral del espacio cultural de la parroquia con nuevas instalaciones, equipamiento moderno y programación cultural ampliada para toda la comunidad.</div>
+          </div>
+
+          <div class="tl-item">
+            <div class="tl-dot amber">2026</div>
+            <div class="tl-year">Hoy · 2026</div>
+            <div class="tl-title">Amoedo hacia el futuro</div>
+            <div class="tl-desc">La parroquia combina tradición y modernidad: mantiene vivas sus raíces culturales mientras abraza el desarrollo sostenible, el teletrabajo y las nuevas oportunidades que ofrece el siglo XXI.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card card-amber reveal">
+        <h2>⛪ San Amaro: Patrón de Amoedo</h2>
+        <p id="san-amaro-desc">
+          La parroquia está bajo la advocación de <strong>San Amaro</strong>,
+          un santo peregrino de origen legendario muy venerado en Galicia.
+          Según la tradición, San Amaro fue un monje benedictino que realizó
+          un largo viaje en busca del Paraíso Terrenal.
+        </p>
+        <div class="data-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="info-box amber">
+            <strong>🙏 Devoción Popular</strong>
+            <p>La devoción a San Amaro se mantiene viva desde hace siglos, celebrándose su fiesta el 15 de enero con gran participación de vecinos y visitantes.</p>
+          </div>
+          <div class="info-box amber">
+            <strong>📅 Festividad</strong>
+            <p>La Romaría de San Amaro es la celebración más importante de la parroquia, combinando actos religiosos con festividades populares.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-green reveal">
+        <h2>🏛️ Patrimonio y Tradición</h2>
+        <div class="data-grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="info-box"><strong>🎭</strong><p>Tradiciones Orales</p></div>
+          <div class="info-box"><strong>🎉</strong><p>Fiestas Patronales</p></div>
+          <div class="info-box"><strong>🌳</strong><p>Montes Comunales</p></div>
+          <div class="info-box"><strong>🥘</strong><p>Gastronomía Local</p></div>
+          <div class="info-box"><strong>🎵</strong><p>Música Tradicional</p></div>
+          <div class="info-box"><strong>✝️</strong><p>Devoción Religiosa</p></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+
   <footer class="site-footer">
-    <p id="footer-text">Amoedo, 2026 · Pazos de Borbén, Galicia</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="header-title">Amoedo</div>
+        <p>Parroquia de San Amaro de Amoedo<br>Pazos de Borbén, Galicia</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../pages/historia.html">Historia</a></li>
+          <li><a href="../pages/fiestas.html">Fiestas</a></li>
+          <li><a href="../pages/fotos.html">Fotos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="../pages/poligono.html">Polígono Industrial</a></li>
+          <li><a href="../pages/comunidad-montes.html">Comunidad de Montes</a></li>
+          <li><a href="../pages/casa-cultural.html">Casa Cultural</a></li>
+          <li><a href="https://pazosdeborben.sedelectronica.gal/" target="_blank">Concello de Pazos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-text">© Amoedo 2026 · Pazos de Borbén, Galicia · Todos los derechos reservados</p>
+    </div>
   </footer>
 
-    <script src="../js/main.js"></script>
-    <script>
-        function updatePageTexts() {
-            const pageTranslations = {
-                es: {
-                    historiaTitle: "Historia de Amoedo",
-                    historiaIntro: "La parroquia de San Amaro de Amoedo tiene una rica historia que se remonta a tiempos medievales. Su patrimonio cultural, tradiciones y legado histórico forman parte fundamental de la identidad de sus vecinos.",
-                    origenesTitle: "Orígenes Medievales",
-                    origenesDesc: "El topónimo "Amoedo" proviene del latín amoenum, que significa "ameno" o "agradable", en referencia a las características del territorio. La parroquia tiene documentación histórica que se remonta al siglo XIII, cuando ya aparecía mencionada en archivos eclesiásticos.",
-                    documentacionTitle: "Primeras referencias documentales",
-                    documentacionDesc: "Los primeros registros escritos de Amoedo aparecen en documentos eclesiásticos del siglo XIII, vinculados a la organización territorial de la Iglesia en Galicia. La parroquia formaba parte del antiguo arciprestazgo de Morrazo.",
-                    sanAmaroTitle: "San Amaro: Patrón de Amoedo",
-                    sanAmaroDesc: "La parroquia está bajo la advocación de San Amaro, un santo peregrino de origen legendario muy venerado en Galicia. Según la tradición, San Amaro fue un monje benedictino que realizó un largo viaje en busca del Paraíso Terrenal.",
-                    devocionTitle: "Devoción Popular",
-                    devocionDesc: "La devoción a San Amaro se mantiene viva en Amoedo desde hace siglos, celebrándose su fiesta el 15 de enero con gran participación de vecinos y visitantes.",
-                    festividadTitle: "Festividad",
-                    festividadDesc: "La Romaría de San Amaro es la celebración más importante de la parroquia, combinando actos religiosos con festividades populares.",
-                    iglesiaTitle: "Iglesia Parroquial",
-                    iglesiaDesc: "La Iglesia de San Amaro es el templo parroquial de Amoedo. Aunque ha sufrido diversas reformas a lo largo de los siglos, conserva elementos arquitectónicos de interés y sigue siendo el centro espiritual y social de la comunidad.",
-                    arquitecturaTitle: "Elementos arquitectónicos",
-                    elemento1: "Planta de nave única con capillas laterales",
-                    elemento2: "Campanario de estilo tradicional gallego",
-                    elemento3: "Retablo mayor dedicado a San Amaro",
-                    elemento4: "Imágenes religiosas de valor artístico",
-                    sigloXxTitle: "Siglo XX: Transformaciones",
-                    sigloXxDesc: "El siglo XX trajo importantes cambios a Amoedo. La emigración a ciudades y al extranjero marcó profundamente a la comunidad, aunque muchos vecinos mantuvieron sus vínculos con la parroquia.",
-                    cambio1: "Emigración Rural",
-                    cambio2: "Electrificación",
-                    cambio3: "Mejoras en Carreteras",
-                    sigloXxiTitle: "Siglo XXI: Desarrollo y Futuro",
-                    sigloXxiIntro: "El nuevo milenio ha traído un renovado impulso a Amoedo con proyectos de desarrollo que combinan modernidad con respeto al patrimonio.",
-                    hito1Title: "Polígono Industrial (2006)",
-                    hito1Desc: "Inauguración del Polígono Industrial Chan de Amoedo, impulsando el desarrollo económico de la zona.",
-                    hito2Title: "Fibra Óptica (2020)",
-                    hito2Desc: "Llegada de la fibra óptica de alta velocidad, conectando Amoedo con el mundo digital.",
-                    hito3Title: "Digitalización (2025)",
-                    hito3Desc: "Proyecto de digitalización del archivo parroquial para preservar la memoria histórica.",
-                    hito4Title: "Casa Cultural (2025)",
-                    hito4Desc: "Reforma integral de la Casa Cultural con nuevos espacios y servicios para la comunidad.",
-                    digitalizacionTitle: "Proyecto de Digitalización (2025)",
-                    digitalizacionDesc: "En 2025, la parroquia de Amoedo ha emprendido un ambicioso proyecto de digitalización del archivo parroquial. Este proyecto busca preservar la memoria histórica de la comunidad mediante la conversión de documentos antiguos en formato digital.",
-                    objetivosDigitalizacionTitle: "Objetivos del Proyecto",
-                    objetivo1: "Preservación de documentos históricos (registros, actas, fotografías)",
-                    objetivo2: "Acceso digital al patrimonio documental",
-                    objetivo3: "Investigación genealógica facilitada",
-                    objetivo4: "Protección contra deterioro y pérdida",
-                    objetivo5: "Difusión de la historia local",
-                    datoDigital1: "Documentos Históricos",
-                    datoDigital2: "Fotografías Antiguas",
-                    datoDigital3: "Acceso Online",
-                    patrimonioTitle: "Patrimonio y Tradición",
-                    patrimonioDesc: "Amoedo conserva un valioso patrimonio cultural que va más allá de sus monumentos. Las tradiciones orales, fiestas populares y costumbres forman parte de un legado inmaterial que se transmite de generación en generación.",
-                    patrimonio1: "Tradiciones Orales",
-                    patrimonio2: "Fiestas Patronales",
-                    patrimonio3: "Montes Comunales",
-                    patrimonio4: "Gastronomía Local",
-                    patrimonio5: "Música Tradicional",
-                    patrimonio6: "Devoción Religiosa"
-                },
-                gl: {
-                    historiaTitle: "Historia de Amoedo",
-                    historiaIntro: "A parroquia de San Amaro de Amoedo ten unha rica historia que se remonta a tempos medievais. O seu patrimonio cultural, tradicións e legado histórico forman parte fundamental da identidade dos seus veciños.",
-                    origenesTitle: "Orixes Medievais",
-                    origenesDesc: "O topónimo "Amoedo" provén do latín amoenum, que significa "ameno" ou "agradable", en referencia ás características do territorio. A parroquia ten documentación histórica que se remonta ao século XIII, cando xa aparecía mencionada en arquivos eclesiásticos.",
-                    documentacionTitle: "Primeiras referencias documentais",
-                    documentacionDesc: "Os primeiros rexistros escritos de Amoedo aparecen en documentos eclesiásticos do século XIII, vinculados á organización territorial da Igrexa en Galicia. A parroquia formaba parte do antigo arciprestado de Morrazo.",
-                    sanAmaroTitle: "San Amaro: Patrón de Amoedo",
-                    sanAmaroDesc: "A parroquia está baixo a advocación de San Amaro, un santo peregrino de orixe lendaria moi venerado en Galicia. Segundo a tradición, San Amaro foi un monxe beneditino que realizou unha longa viaxe en busca do Paraíso Terreal.",
-                    devocionTitle: "Devoción Popular",
-                    devocionDesc: "A devoción a San Amaro mantense viva en Amoedo desde hai séculos, celebrándose a súa festa o 15 de xaneiro con gran participación de veciños e visitantes.",
-                    festividadTitle: "Festividade",
-                    festividadDesc: "A Romaría de San Amaro é a celebración máis importante da parroquia, combinando actos relixiosos con festividades populares.",
-                    iglesiaTitle: "Igrexa Parroquial",
-                    iglesiaDesc: "A Igrexa de San Amaro é o templo parroquial de Amoedo. Aínda que sufriu diversas reformas ao longo dos séculos, conserva elementos arquitectónicos de interese e segue sendo o centro espiritual e social da comunidade.",
-                    arquitecturaTitle: "Elementos arquitectónicos",
-                    elemento1: "Planta de nave única con capelas laterais",
-                    elemento2: "Campanario de estilo tradicional galego",
-                    elemento3: "Retablo maior dedicado a San Amaro",
-                    elemento4: "Imaxes relixiosas de valor artístico",
-                    sigloXxTitle: "Século XX: Transformacións",
-                    sigloXxDesc: "O século XX trouxo importantes cambios a Amoedo. A emigración a cidades e ao estranxeiro marcou profundamente á comunidade, aínda que moitos veciños mantiveron os seus vínculos coa parroquia.",
-                    cambio1: "Emigración Rural",
-                    cambio2: "Electrificación",
-                    cambio3: "Melloras en Estradas",
-                    sigloXxiTitle: "Século XXI: Desenvolvemento e Futuro",
-                    sigloXxiIntro: "O novo milenio trouxo un renovado impulso a Amoedo con proxectos de desenvolvemento que combinan modernidade con respecto ao patrimonio.",
-                    hito1Title: "Polígono Industrial (2006)",
-                    hito1Desc: "Inauguración do Polígono Industrial Chan de Amoedo, impulsando o desenvolvemento económico da zona.",
-                    hito2Title: "Fibra Óptica (2020)",
-                    hito2Desc: "Chegada da fibra óptica de alta velocidade, conectando Amoedo co mundo dixital.",
-                    hito3Title: "Dixitalización (2025)",
-                    hito3Desc: "Proxecto de dixitalización do arquivo parroquial para preservar a memoria histórica.",
-                    hito4Title: "Casa Cultural (2025)",
-                    hito4Desc: "Reforma integral da Casa Cultural con novos espazos e servizos para a comunidade.",
-                    digitalizacionTitle: "Proxecto de Dixitalización (2025)",
-                    digitalizacionDesc: "En 2025, a parroquia de Amoedo emprendeu un ambicioso proxecto de dixitalización do arquivo parroquial. Este proxecto busca preservar a memoria histórica da comunidade mediante a conversión de documentos antigos en formato dixital.",
-                    objetivosDigitalizacionTitle: "Obxectivos do Proxecto",
-                    objetivo1: "Preservación de documentos históricos (rexistros, actas, fotografías)",
-                    objetivo2: "Acceso dixital ao patrimonio documental",
-                    objetivo3: "Investigación xenealóxica facilitada",
-                    objetivo4: "Protección contra deterioro e perda",
-                    objetivo5: "Difusión da historia local",
-                    datoDigital1: "Documentos Históricos",
-                    datoDigital2: "Fotografías Antigas",
-                    datoDigital3: "Acceso Online",
-                    patrimonioTitle: "Patrimonio e Tradición",
-                    patrimonioDesc: "Amoedo conserva un valioso patrimonio cultural que vai máis aló dos seus monumentos. As tradicións orais, festas populares e costumes forman parte dun legado inmaterial que se transmite de xeración en xeración.",
-                    patrimonio1: "Tradicións Orais",
-                    patrimonio2: "Festas Patronais",
-                    patrimonio3: "Montes Comunais",
-                    patrimonio4: "Gastronomía Local",
-                    patrimonio5: "Música Tradicional",
-                    patrimonio6: "Devoción Relixiosa"
-                }
-            };
+  <script src="../js/main.js"></script>
+  <script src="../js/ui.js"></script>
+  
 
-            const pt = pageTranslations[currentLang];
-            const ids = ['historia-title', 'historia-intro', 'origenes-title', 'origenes-desc',
-                'documentacion-title', 'documentacion-desc', 'san-amaro-title', 'san-amaro-desc',
-                'devocion-title', 'devocion-desc', 'festividad-title', 'festividad-desc',
-                'iglesia-title', 'iglesia-desc', 'arquitectura-title', 'elemento1', 'elemento2',
-                'elemento3', 'elemento4', 'siglo-xx-title', 'siglo-xx-desc', 'cambio1', 'cambio2',
-                'cambio3', 'siglo-xxi-title', 'siglo-xxi-intro', 'hito1-title', 'hito1-desc',
-                'hito2-title', 'hito2-desc', 'hito3-title', 'hito3-desc', 'hito4-title', 'hito4-desc',
-                'digitalizacion-title', 'digitalizacion-desc', 'objetivos-digitalizacion-title',
-                'objetivo1', 'objetivo2', 'objetivo3', 'objetivo4', 'objetivo5', 'dato-digital1',
-                'dato-digital2', 'dato-digital3', 'patrimonio-title', 'patrimonio-desc',
-                'patrimonio1', 'patrimonio2', 'patrimonio3', 'patrimonio4', 'patrimonio5', 'patrimonio6'];
-
-            ids.forEach(id => {
-                const el = document.getElementById(id);
-                const key = id.replace(/-/g, '');
-                if (el && pt[key]) {
-                    el.textContent = pt[key];
-                }
-            });
-        }
-    </script>
 </body>
 </html>

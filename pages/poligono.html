@@ -1,392 +1,285 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polígono Industrial - Amoedo</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polígono Industrial — Amoedo</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
-    <div class="bokeh"></div>
-    
-        <header>
-            <div class="logo-container">
-                <a href="../index.html">
-                    <img src="../images/escudo-amoedo.png" alt="Escudo de Amoedo" class="logo-amoedo">
-                </a>
-            </div>
-            <h1>Amoedo</h1>
-            <div class="lang-selector">
-                <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
-                <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
-            </div>
-        </header>
 
-        <nav>
-            <a href="../index.html" class="btn btn-primary" id="nav-home">Inicio</a>
-            <a href="poligono.html" class="btn btn-primary" id="nav-polygon">Polígono</a>
-            <a href="comunidad-montes.html" class="btn btn-primary" id="nav-montes">Comunidad de Montes</a>
-            <a href="historia.html" class="btn btn-primary" id="nav-history">Historia</a>
-            <a href="casa-cultural.html" class="btn btn-primary" id="nav-cultura">Casa Cultural</a>
-            <a href="fiestas.html" class="btn btn-primary" id="nav-events">Fiestas</a>
-            <a href="fotos.html" class="btn btn-primary" id="nav-photos">Fotos</a>
-        </nav>
+  <!-- EVENT BANNER -->
+  <div class="event-banner">
+    <span>🎉 Romaría de San Amaro · 15 de enero</span>
+    <span class="banner-countdown" id="banner-countdown">cargando...</span>
+    <a href="../pages/fiestas.html">Ver programa</a>
+  </div>
 
-  <div class="page-body">
-    <div class="page-main">
-            <main>
-                <div class="card reveal">
-                    <h2 id="poligono-title">🏭 Polígono Industrial Chan de Amoedo</h2>
-                    <div class="img-placeholder" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);">
-                        🏢 Zona Industrial
-                    </div>
-
-                    <p id="poligono-intro">
-                        El <strong>Polígono Industrial Chan de Amoedo</strong> es una zona industrial estratégica situada en el municipio de Pazos de Borbén, en el área metropolitana de Vigo. Inaugurado en 2006, representa el motor económico de la parroquia de Amoedo.
-                    </p>
-                    <div class="data-grid">
-                        <div class="data-item">
-                            <span class="data-icon">📏</span>
-                            <span class="data-number">139.863</span>
-                            <span class="data-label" id="superficie">m² de superficie</span>
-                        </div>
-                        <div class="data-item">
-                            <span class="data-icon">📅</span>
-                            <span class="data-number">2006</span>
-                            <span class="data-label" id="inauguracion">Año de inauguración</span>
-                        </div>
-                        <div class="data-item">
-                            <span class="data-icon">🚗</span>
-                            <span class="data-number">15</span>
-                            <span class="data-label" id="distancia">min a Vigo</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card reveal">
-                    <h2 id="ubicacion-title">📍 Ubicación Estratégica</h2>
-                    <p id="ubicacion-desc">
-                        Situado entre <strong>Vigo y Redondela</strong>, el polígono cuenta con excelentes accesos a la autopista AP-9 y la autovía A-52. Su ubicación privilegiada en el eje atlántico gallego ofrece una conectividad ideal para el transporte de mercancías y el desarrollo empresarial.
-                    </p>
-                    <div class="info-box">
-                        <strong><span id="accesos-title">🛣️ Accesos principales</span></strong>
-                        <ul id="accesos-list" style="margin: 10px 0;">
-                            <li><span id="acceso1">AP-9: Autopista del Atlántico (3 km)</span></li>
-                            <li><span id="acceso2">A-52: Autovía Rías Baixas (2 km)</span></li>
-                            <li><span id="acceso3">PO-531: Carretera local de acceso directo</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- NUEVA SECCIÓN: MAPA INTERACTIVO -->
-                <div class="card mapa-section">
-                    <h2 id="mapa-title">🗺️ Mapa Interactivo - Empresas y Servicios</h2>
-                    <p id="mapa-intro" style="margin-bottom: 20px;">
-                        Explora las empresas, servicios y restaurantes del polígono. Haz clic en los marcadores para ver más información.
-                    </p>
-                    
-                    <div class="legend">
-                        <div class="legend-item">
-                            <div class="legend-icon industria">🏭</div>
-                            <span id="leyenda-industria">Industria</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-icon construccion">🚧</div>
-                            <span id="leyenda-construccion">Construcción</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-icon productos-mar">🐟</div>
-                            <span id="leyenda-mar">Productos del Mar</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-icon servicios">⚙️</div>
-                            <span id="leyenda-servicios">Servicios</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-icon restaurante">🍽️</div>
-                            <span id="leyenda-restaurante">Restaurantes</span>
-                        </div>
-                    </div>
-                    
-                    <div id="map"></div>
-                </div>
-
-                <div class="card reveal">
-                    <h2 id="sectores-title">🏢 Sectores Empresariales</h2>
-                    <p id="sectores-intro">
-                        El polígono alberga empresas de diversos sectores, contribuyendo al desarrollo económico y la generación de empleo en la zona.
-                    </p>
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
-                        <div class="info-box">
-                            <strong><span id="sector1-title">🏭 Industria Manufacturera</span></strong>
-                            <p id="sector1-desc">Carpintería de aluminio, productos metálicos y estructuras.</p>
-                        </div>
-                        <div class="info-box">
-                            <strong><span id="sector2-title">🐟 Productos del Mar</span></strong>
-                            <p id="sector2-desc">Empresas especializadas en conservas y productos pesqueros.</p>
-                        </div>
-                        <div class="info-box">
-                            <strong><span id="sector3-title">🌲 Sector Forestal</span></strong>
-                            <p id="sector3-desc">Explotación maderera y productos derivados de la madera.</p>
-                        </div>
-                        <div class="info-box">
-                            <strong><span id="sector4-title">🚧 Construcción</span></strong>
-                            <p id="sector4-desc">Excavaciones, estructuras y servicios de obras civiles.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-green reveal">
-                    <h2 style="color: #2e7d32; border-color: #66bb6a;" id="fibra-title">🌐 Fibra Óptica (2020)</h2>
-                    <p id="fibra-desc">
-                        En <strong>2020</strong>, el polígono industrial y toda la parroquia de Amoedo recibieron la instalación de <strong>fibra óptica de alta velocidad</strong>. Esta infraestructura digital ha transformado la conectividad de la zona, permitiendo a las empresas acceder a internet de última generación y mejorando significativamente la calidad de vida de los vecinos.
-                    </p>
-                    <div class="data-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-                        <div class="data-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <span class="data-icon">⚡</span>
-                            <span class="data-label" id="fibra1">Alta Velocidad</span>
-                        </div>
-                        <div class="data-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <span class="data-icon">📡</span>
-                            <span class="data-label" id="fibra2">Cobertura Total</span>
-                        </div>
-                        <div class="data-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <span class="data-icon">🚀</span>
-                            <span class="data-label" id="fibra3">Futuro Digital</span>
-                        </div>
-                    </div>
-                    <div class="info-box" style="background: rgba(255,255,255,0.8);">
-                        <strong><span id="beneficios-fibra-title">✅ Beneficios de la Fibra Óptica</span></strong>
-                        <ul id="beneficios-fibra-list" style="margin: 10px 0;">
-                            <li><span id="beneficio-fibra1">Velocidades de hasta 1 Gbps para empresas y hogares</span></li>
-                            <li><span id="beneficio-fibra2">Teletrabajo sin interrupciones</span></li>
-                            <li><span id="beneficio-fibra3">Conexión estable para servicios en la nube</span></li>
-                            <li><span id="beneficio-fibra4">Mayor competitividad empresarial</span></li>
-                            <li><span id="beneficio-fibra5">Acceso a formación online y telemedicina</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card reveal">
-                    <h2
-                                    <div class="card reveal">
-                    <h2 id="ventajas-title">⭐ Ventajas para Empresas</h2>
-                    <ul id="ventajas-list" style="line-height: 1.8;">
-                        <li>📍 <span id="ventaja1">Ubicación estratégica en el eje atlántico</span></li>
-                        <li>🛣️ <span id="ventaja2">Excelentes comunicaciones por carretera</span></li>
-                        <li>🌐 <span id="ventaja3">Fibra óptica de alta velocidad desde 2020</span></li>
-                        <li>🏙️ <span id="ventaja4">Proximidad al área metropolitana de Vigo</span></li>
-                        <li>🚢 <span id="ventaja5">Cercanía al Puerto de Vigo</span></li>
-                        <li>✈️ <span id="ventaja6">Aeropuerto de Vigo-Peinador a 20 minutos</span></li>
-                        <li>🌳 <span id="ventaja7">Entorno rural con calidad de vida</span></li>
-                    </ul>
-                </div>
-
-                <div class="card card-blue reveal">
-                    <h2 style="color: #1565c0; border-color: #2196f3;" id="contacto-title">💼 Información de Contacto</h2>
-                    <p id="contacto-desc">
-                        Para consultas sobre naves disponibles, establecimiento de empresas o información general sobre el polígono industrial, contactar con:
-                    </p>
-                    <div class="info-box">
-                        <strong><span id="concello-title">🏛️ Concello de Pazos de Borbén</span></strong>
-                        <p id="concello-info">
-                            Teléfono: 986 76 60 01<br>
-                            Email: info@pazosdeborben.gal<br>
-                            Web: www.pazosdeborben.gal
-                        </p>
-                    </div>
-                </div>
-            </main>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="header-logo">
+        <img src="../images/escudo-amoedo.png" alt="Escudo de Amoedo" class="logo-img">
+        <div>
+          <div class="header-title">Amoedo</div>
+          <div class="header-subtitle">Pazos de Borbén · Galicia</div>
         </div>
+      </a>
+      <div class="header-spacer"></div>
+      <div class="header-actions">
+        <button class="dark-toggle" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+        <div class="lang-selector">
+          <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+          <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-  </div><!-- /page-body -->
+  <!-- DESKTOP NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-link" id="nav-home">Inicio</a>
+      <a href="../pages/poligono.html" class="nav-link active" id="nav-polygon">Polígono</a>
+      <a href="../pages/comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
+      <a href="../pages/historia.html" class="nav-link" id="nav-history">Historia</a>
+      <a href="../pages/casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
+      <a href="../pages/fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
+      <a href="../pages/fotos.html" class="nav-link" id="nav-photos">Fotos</a>
+    </div>
+  </nav>
 
-  <!-- FOOTER -->
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close">✕</button>
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="../pages/poligono.html" class="nav-link active">Polígono</a>
+    <a href="../pages/comunidad-montes.html" class="nav-link">Comunidad de Montes</a>
+    <a href="../pages/historia.html" class="nav-link">Historia</a>
+    <a href="../pages/casa-cultural.html" class="nav-link">Casa Cultural</a>
+    <a href="../pages/fiestas.html" class="nav-link">Fiestas</a>
+    <a href="../pages/fotos.html" class="nav-link">Fotos</a>
+  </div>
+
+<div class="page-body">
+    <main class="page-main">
+
+      <div class="card reveal">
+        <h2 id="poligono-title">🏭 Polígono Industrial Chan de Amoedo</h2>
+        <div class="img-placeholder" style="background: linear-gradient(135deg, #1a2f23 0%, #3d7548 100%);">
+          🏢 &nbsp; Zona Industrial
+        </div>
+        <p id="poligono-intro">
+          El <strong>Polígono Industrial Chan de Amoedo</strong> es una zona industrial estratégica
+          situada en el municipio de Pazos de Borbén, en el área metropolitana de Vigo.
+          Inaugurado en 2006, representa el motor económico de la parroquia de Amoedo.
+        </p>
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-icon">📏</span>
+            <span class="data-number">139.863</span>
+            <span class="data-label" id="superficie">m² de superficie</span>
+          </div>
+          <div class="data-item">
+            <span class="data-icon">📅</span>
+            <span class="data-number">2006</span>
+            <span class="data-label" id="inauguracion">Año de inauguración</span>
+          </div>
+          <div class="data-item">
+            <span class="data-icon">🚗</span>
+            <span class="data-number">15</span>
+            <span class="data-label" id="distancia">min a Vigo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <h2 id="ubicacion-title">📍 Ubicación Estratégica</h2>
+        <p id="ubicacion-desc">
+          Situado entre <strong>Vigo y Redondela</strong>, el polígono cuenta con excelentes
+          accesos a la autopista AP-9 y la autovía A-52. Su ubicación privilegiada en el eje
+          atlántico gallego ofrece conectividad ideal para el transporte de mercancías y el
+          desarrollo empresarial.
+        </p>
+        <div class="info-box">
+          <strong id="accesos-title">🛣️ Accesos principales</strong>
+          <ul style="margin: 8px 0;">
+            <li id="acceso1">AP-9: Autopista del Atlántico (3 km)</li>
+            <li id="acceso2">A-52: Autovía Rías Baixas (2 km)</li>
+            <li id="acceso3">PO-531: Carretera local de acceso directo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <h2 id="mapa-title">🗺️ Mapa Interactivo — Empresas y Servicios</h2>
+        <p id="mapa-intro" style="margin-bottom: 16px;">
+          Explora las empresas, servicios y restaurantes del polígono.
+          Haz clic en los marcadores para ver más información.
+        </p>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-icon industria">I</div><span id="leyenda-industria">Industria</span></div>
+          <div class="legend-item"><div class="legend-icon construccion">C</div><span id="leyenda-construccion">Construcción</span></div>
+          <div class="legend-item"><div class="legend-icon productos-mar">M</div><span id="leyenda-mar">Productos del Mar</span></div>
+          <div class="legend-item"><div class="legend-icon servicios">S</div><span id="leyenda-servicios">Servicios</span></div>
+          <div class="legend-item"><div class="legend-icon restaurante">R</div><span id="leyenda-restaurante">Restaurantes</span></div>
+        </div>
+        <div id="map"></div>
+      </div>
+
+      <div class="card reveal">
+        <h2 id="sectores-title">🏢 Sectores Empresariales</h2>
+        <p id="sectores-intro">El polígono alberga empresas de diversos sectores, contribuyendo al desarrollo económico y la generación de empleo en la zona.</p>
+        <div class="data-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="info-box"><strong id="sector1-title">🏭 Industria Manufacturera</strong><p id="sector1-desc">Carpintería de aluminio, productos metálicos y estructuras.</p></div>
+          <div class="info-box"><strong id="sector2-title">🐟 Productos del Mar</strong><p id="sector2-desc">Empresas especializadas en conservas y productos pesqueros.</p></div>
+          <div class="info-box"><strong id="sector3-title">🌲 Sector Forestal</strong><p id="sector3-desc">Explotación maderera y productos derivados de la madera.</p></div>
+          <div class="info-box"><strong id="sector4-title">🚧 Construcción</strong><p id="sector4-desc">Excavaciones, estructuras y servicios de obras civiles.</p></div>
+        </div>
+      </div>
+
+      <div class="card card-green reveal">
+        <h2 id="fibra-title">🌐 Fibra Óptica (2020)</h2>
+        <p id="fibra-desc">En <strong>2020</strong>, el polígono industrial y toda la parroquia de Amoedo recibieron la instalación de <strong>fibra óptica de alta velocidad</strong>. Esta infraestructura digital ha transformado la conectividad de la zona.</p>
+        <div class="data-grid">
+          <div class="data-item"><span class="data-icon">⚡</span><span class="data-label" id="fibra1">Alta Velocidad</span></div>
+          <div class="data-item"><span class="data-icon">📡</span><span class="data-label" id="fibra2">Cobertura Total</span></div>
+          <div class="data-item"><span class="data-icon">🚀</span><span class="data-label" id="fibra3">Futuro Digital</span></div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <h2 id="ventajas-title">⭐ Ventajas para Empresas</h2>
+        <ul id="ventajas-list" style="line-height: 2.1; padding-left: 1em;">
+          <li id="ventaja1">Ubicación estratégica en el eje atlántico</li>
+          <li id="ventaja2">Excelentes comunicaciones por carretera (AP-9, A-52)</li>
+          <li id="ventaja3">Fibra óptica de alta velocidad desde 2020</li>
+          <li id="ventaja4">Proximidad al área metropolitana de Vigo</li>
+          <li id="ventaja5">Cercanía al Puerto de Vigo</li>
+          <li id="ventaja6">Aeropuerto de Vigo-Peinador a 20 minutos</li>
+          <li id="ventaja7">Entorno rural con calidad de vida</li>
+        </ul>
+      </div>
+
+      <div class="card card-blue reveal">
+        <h2 id="contacto-title">💼 Información de Contacto</h2>
+        <p id="contacto-desc">Para consultas sobre naves disponibles, establecimiento de empresas o información general sobre el polígono industrial, contactar con:</p>
+        <div class="info-box blue">
+          <strong id="concello-title">🏛️ Concello de Pazos de Borbén</strong>
+          <p id="concello-info">
+            Teléfono: 986 76 60 01<br>
+            Email: info@pazosdeborben.gal<br>
+            Web: <a href="https://www.pazosdeborben.gal" target="_blank">www.pazosdeborben.gal</a>
+          </p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
   <footer class="site-footer">
     <p id="footer-text">Amoedo, 2026 · Pazos de Borbén, Galicia</p>
   </footer>
+  </div><!-- /page-body -->
 
-    <script src="../js/main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="header-title">Amoedo</div>
+        <p>Parroquia de San Amaro de Amoedo<br>Pazos de Borbén, Galicia</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../pages/historia.html">Historia</a></li>
+          <li><a href="../pages/fiestas.html">Fiestas</a></li>
+          <li><a href="../pages/fotos.html">Fotos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="../pages/poligono.html">Polígono Industrial</a></li>
+          <li><a href="../pages/comunidad-montes.html">Comunidad de Montes</a></li>
+          <li><a href="../pages/casa-cultural.html">Casa Cultural</a></li>
+          <li><a href="https://pazosdeborben.sedelectronica.gal/" target="_blank">Concello de Pazos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-text">© Amoedo 2026 · Pazos de Borbén, Galicia · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Coordenadas del centro del polígono
-        const centerCoords = [42.293, -8.551];
-        
-        // Inicializar el mapa
-        const map = L.map('map').setView(centerCoords, 15);
-        
-        // Añadir capa de OpenStreetMap
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap',
-            maxZoom: 19
-        }).addTo(map);
+    document.addEventListener('DOMContentLoaded', function () {
+      var map = L.map('map').setView([42.293, -8.551], 15);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+      }).addTo(map);
 
-        // Definir iconos personalizados para cada tipo
-        const icons = {
-            industria: L.divIcon({
-                className: 'custom-icon',
-                html: '<div style="background: #2196F3; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><span style="font-size: 16px;">🏭</span></div>',
-                iconSize: [32, 32]
-            }),
-            construccion: L.divIcon({
-                className: 'custom-icon',
-                html: '<div style="background: #FF9800; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><span style="font-size: 16px;">🚧</span></div>',
-                iconSize: [32, 32]
-            }),
-            productosMar: L.divIcon({
-                className: 'custom-icon',
-                html: '<div style="background: #00BCD4; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><span style="font-size: 16px;">🐟</span></div>',
-                iconSize: [32, 32]
-            }),
-            servicios: L.divIcon({
-                className: 'custom-icon',
-                html: '<div style="background: #9C27B0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><span style="font-size: 16px;">⚙️</span></div>',
-                iconSize: [32, 32]
-            }),
-            restaurante: L.divIcon({
-                className: 'custom-icon',
-                html: '<div style="background: #E91E63; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; box-shadow: 0 3px 10px rgba(0,0,0,0.3);"><span style="font-size: 16px;">🍽️</span></div>',
-                iconSize: [32, 32]
-            })
-        };
-
-        // Array de lugares con las coordenadas CORREGIDAS
-        const lugares = [
-            // EMPRESAS
-            {
-                nombre: "Algas Atlánticas Algamar S.L.",
-                tipo: "productosMar",
-                categoria: "Productos del Mar",
-                descripcion: "Empresa especializada en la recolección, elaboración y comercialización de algas marinas del Atlántico.",
-                coords: [42.292500, -8.550151]
-            },
-            {
-                nombre: "Alucasa (Aluminios LC-Amoedo S.L.)",
-                tipo: "industria",
-                categoria: "Industria",
-                descripcion: "Carpintería de aluminio. Fabricación de ventanas, puertas y cerramientos de aluminio.",
-                coords: [42.293784, -8.550245]
-            },
-            {
-                nombre: "Construcciones Amoedo S.L.",
-                tipo: "construccion",
-                categoria: "Construcción",
-                descripcion: "Empresa de construcción y obra civil. Proyectos de edificación, reformas y rehabilitaciones.",
-                coords: [42.288165, -8.547523]
-            },
-            {
-                nombre: "Estación de Servicio A Chan de Amoedo (Meroil)",
-                tipo: "servicios",
-                categoria: "Servicios",
-                descripcion: "Gasolinera con cafetería. Punto de encuentro habitual de trabajadores de la zona.",
-                coords: [42.293646, -8.552196],
-                contacto: "⛽ Cafetería con bocadillos y platos combinados"
-            },
-            {
-                nombre: "Foproma Metal S.L.",
-                tipo: "industria",
-                categoria: "Industria",
-                descripcion: "Fabricación de estructuras metálicas para construcción e industria naval.",
-                coords: [42.291290, -8.550210]
-            },
-            {
-                nombre: "Grupo Pazos",
-                tipo: "industria",
-                categoria: "Industria",
-                descripcion: "Materiales de construcción. Empresa referente en el sector de la construcción.",
-                coords: [42.293881, -8.550991]
-            },
-            {
-                nombre: "Hielos Cúbico (Suroso Comercial S.L.)",
-                tipo: "servicios",
-                categoria: "Servicios",
-                descripcion: "Fábrica de hielo industrial. Suministro para hostelería, pesca e industria alimentaria.",
-                coords: [42.294625, -8.550667]
-            },
-            {
-                nombre: "Pereira Elaborados (Pereira y CAO)",
-                tipo: "productosMar",
-                categoria: "Productos del Mar",
-                descripcion: "Productos del mar del Grupo Pereira. Elaboración y distribución de pescado y marisco.",
-                coords: [42.292993, -8.551495]
-            },
-            {
-                nombre: "Yacht Port Marinas S.L. (YPM)",
-                tipo: "servicios",
-                categoria: "Servicios",
-                descripcion: "Infraestructuras portuarias. Especializada en construcción y gestión de puertos deportivos.",
-                coords: [42.291290, -8.550210]
-            },
-            // RESTAURANTES Y CAFETERÍAS
-            {
-                nombre: "A Torta (Cafetería y Pastelería)",
-                tipo: "restaurante",
-                categoria: "Restaurante",
-                descripcion: "Repostería artesana famosa por la Torta del Peregrino, empanadas y pan. Ideal para desayunos.",
-                coords: [42.293715, -8.550576],
-                contacto: "📍 Ubicada en el acceso al polígono (Barrio da Igrexa)"
-            },
-            {
-                nombre: "Restaurante Asador Besadio",
-                tipo: "restaurante",
-                categoria: "Restaurante",
-                descripcion: "Especialidad en carnes a la brasa: churrasco, chuletones y cocina tradicional gallega.",
-                coords: [42.293662, -8.548873],
-                contacto: "📍 Ubicado en O Carballiño, muy cerca del polígono"
-            },
-            {
-                nombre: "Cafetería de la Gasolinera (Meroil)",
-                tipo: "restaurante",
-                categoria: "Restaurante",
-                descripcion: "Cafetería dentro de la gasolinera. Parada rápida con bocadillos y café.",
-                coords: [42.293646, -8.552196],
-                contacto: "☕ Punto de encuentro de trabajadores del polígono"
-            }
-        ];
-
-        // Colores por categoría para los popups
-        const categoryColors = {
-            'Industria': '#2196F3',
-            'Construcción': '#FF9800',
-            'Productos del Mar': '#00BCD4',
-            'Servicios': '#9C27B0',
-            'Restaurante': '#E91E63'
-        };
-
-        // Añadir marcadores al mapa
-        lugares.forEach(lugar => {
-            const marker = L.marker(lugar.coords, {
-                icon: icons[lugar.tipo]
-            }).addTo(map);
-
-            // Crear contenido del popup
-            let popupContent = `
-                <div class="popup-content">
-                    <div class="popup-title">${lugar.nombre}</div>
-                    <div class="popup-category" style="background: ${categoryColors[lugar.categoria]};">
-                        ${lugar.categoria}
-                    </div>
-                    <div class="popup-description">${lugar.descripcion}</div>
-                    ${lugar.contacto ? `<div class="popup-contact">${lugar.contacto}</div>` : ''}
-                </div>
-            `;
-
-            marker.bindPopup(popupContent, {
-                maxWidth: 280
-            });
+      function makeIcon(bg, label) {
+        return L.divIcon({
+          className: '',
+          html: '<div style="background:' + bg + ';width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.35);color:#fff;font-size:11px;font-weight:700">' + label + '</div>',
+          iconSize: [32, 32], iconAnchor: [16, 16]
         });
+      }
 
-        // Ajustar el zoom para mostrar todos los marcadores
-        const group = L.featureGroup(lugares.map(l => L.marker(l.coords)));
-        map.fitBounds(group.getBounds().pad(0.15));
+      var icons = {
+        industria:    makeIcon('#2196F3','I'),
+        construccion: makeIcon('#FF9800','C'),
+        productosMar: makeIcon('#00BCD4','M'),
+        servicios:    makeIcon('#9C27B0','S'),
+        restaurante:  makeIcon('#E91E63','R')
+      };
+
+      var catColors = {
+        'Industria':'#2196F3','Construcción':'#FF9800',
+        'Productos del Mar':'#00BCD4','Servicios':'#9C27B0','Restaurante':'#E91E63'
+      };
+
+      var lugares = [
+        { n:"Algamar S.L.", t:"productosMar", c:"Productos del Mar", d:"Especializada en algas marinas del Atlántico.", coords:[42.2925,-8.5502] },
+        { n:"Alucasa (Aluminios LC-Amoedo)", t:"industria", c:"Industria", d:"Carpintería de aluminio, ventanas y cerramientos.", coords:[42.2938,-8.5502] },
+        { n:"Construcciones Amoedo S.L.", t:"construccion", c:"Construcción", d:"Obra civil, edificación y rehabilitaciones.", coords:[42.2882,-8.5475] },
+        { n:"Estación de Servicio Meroil", t:"servicios", c:"Servicios", d:"Gasolinera con cafetería en el acceso al polígono.", coords:[42.2936,-8.5522] },
+        { n:"Foproma Metal S.L.", t:"industria", c:"Industria", d:"Estructuras metálicas para construcción e industria naval.", coords:[42.2913,-8.5502] },
+        { n:"Grupo Pazos", t:"industria", c:"Industria", d:"Materiales de construcción.", coords:[42.2939,-8.5510] },
+        { n:"Hielos Cúbico", t:"servicios", c:"Servicios", d:"Fábrica de hielo industrial para hostelería y pesca.", coords:[42.2946,-8.5507] },
+        { n:"Pereira Elaborados", t:"productosMar", c:"Productos del Mar", d:"Distribución de pescado y marisco del Grupo Pereira.", coords:[42.2930,-8.5515] },
+        { n:"Yacht Port Marinas (YPM)", t:"servicios", c:"Servicios", d:"Construcción y gestión de puertos deportivos.", coords:[42.2915,-8.5499] },
+        { n:"A Torta (Cafetería)", t:"restaurante", c:"Restaurante", d:"Repostería artesana: Torta del Peregrino, empanadas y pan.", coords:[42.2937,-8.5506] },
+        { n:"Restaurante Asador Besadio", t:"restaurante", c:"Restaurante", d:"Carnes a la brasa y cocina tradicional gallega.", coords:[42.2937,-8.5489] },
+        { n:"Cafetería Gasolinera Meroil", t:"restaurante", c:"Restaurante", d:"Bocadillos y café. Parada rápida de trabajadores.", coords:[42.2935,-8.5523] }
+      ];
+
+      var markers = [];
+      lugares.forEach(function(l) {
+        var m = L.marker(l.coords, { icon: icons[l.t] }).addTo(map);
+        m.bindPopup(
+          '<div style="font-family:sans-serif;min-width:200px">' +
+          '<p style="font-weight:700;font-size:14px;margin:0 0 5px">' + l.n + '</p>' +
+          '<span style="background:' + catColors[l.c] + ';color:#fff;font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px">' + l.c + '</span>' +
+          '<p style="font-size:12px;color:#555;margin:8px 0 0;line-height:1.5">' + l.d + '</p>' +
+          '</div>', { maxWidth: 280 }
+        );
+        markers.push(m);
+      });
+
+      var group = L.featureGroup(markers);
+      map.fitBounds(group.getBounds().pad(0.15));
     });
+  </script>
 
-    // Función de traducción existente - mantener código original
-    function updatePageTexts() {
-        // Tu código de traducción aquí
-    }
-</script>
 </body>
 </html>

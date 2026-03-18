@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Fotos - Amoedo</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Fotos — Amoedo</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+  <!-- EVENT BANNER -->
+  <div class="event-banner">
+    <span>🎉 Romaría de San Amaro · 15 de enero</span>
+    <span class="banner-countdown" id="banner-countdown">cargando...</span>
+    <a href="../pages/fiestas.html">Ver programa</a>
+  </div>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
@@ -18,349 +26,426 @@
         </div>
       </a>
       <div class="header-spacer"></div>
-      <div class="lang-selector">
-        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
-        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      <div class="header-actions">
+        <button class="dark-toggle" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+        <div class="lang-selector">
+          <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+          <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- NAV -->
+  <!-- DESKTOP NAV -->
   <nav class="site-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-link" id="nav-home">Inicio</a>
-      <a href="poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
-      <a href="comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
-      <a href="historia.html" class="nav-link" id="nav-history">Historia</a>
-      <a href="casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
-      <a href="fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
-      <a href="fotos.html" class="nav-link active" id="nav-photos">Fotos</a>
+      <a href="../pages/poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
+      <a href="../pages/comunidad-montes.html" class="nav-link" id="nav-montes">Comunidad de Montes</a>
+      <a href="../pages/historia.html" class="nav-link" id="nav-history">Historia</a>
+      <a href="../pages/casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
+      <a href="../pages/fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
+      <a href="../pages/fotos.html" class="nav-link active" id="nav-photos">Fotos</a>
     </div>
   </nav>
 
-  <!-- BODY -->
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close">✕</button>
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="../pages/poligono.html" class="nav-link">Polígono</a>
+    <a href="../pages/comunidad-montes.html" class="nav-link">Comunidad de Montes</a>
+    <a href="../pages/historia.html" class="nav-link">Historia</a>
+    <a href="../pages/casa-cultural.html" class="nav-link">Casa Cultural</a>
+    <a href="../pages/fiestas.html" class="nav-link">Fiestas</a>
+    <a href="../pages/fotos.html" class="nav-link active">Fotos</a>
+  </div>
 
   <div class="page-body">
-    <div class="page-main">
-            <main>
-                <div class="card reveal">
-                    <h2 id="galeria-title">📸 Galería de Fotos</h2>
-                    <p id="galeria-intro">
-                        Descubre Amoedo a través de imágenes. Nuestra galería fotográfica 
-                        captura la esencia de la parroquia: sus paisajes, celebraciones, 
-                        patrimonio y la vida cotidiana de nuestra comunidad.
-                    </p>
-                </div>
+    <main class="page-main">
 
-                <!-- Fiestas y Celebraciones -->
-                <div class="card card-amber reveal">
-                    <h2 style="color: #e65100; border-color: #ffb74d;">🎉 <span id="cat1-title">Fiestas y Celebraciones</span></h2>
-
-                    <div class="data-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 100%);">
-                            📷 <span id="cat1-img1">Romaría San Amaro</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 100%);">
-                            📷 <span id="cat1-img2">Procesiones</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 100%);">
-                            📷 <span id="cat1-img3">Verbenas</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 100%);">
-                            📷 <span id="cat1-img4">San Paio</span>
-                        </div>
-                    </div>
-
-                    <p id="cat1-desc" style="margin-top: 15px;">
-                        Momentos inolvidables de nuestras fiestas patronales, procesiones 
-                        religiosas y verbenas populares que reúnen a toda la comunidad.
-                    </p>
-                </div>
-
-                <!-- Paisajes y Naturaleza -->
-                <div class="card card-green reveal">
-                    <h2 style="color: #2e7d32; border-color: #66bb6a;">🌳 <span id="cat2-title">Paisajes y Naturaleza</span></h2>
-
-                    <div class="data-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #56ab2f 0%, #a8e063 100%);">
-                            📷 <span id="cat2-img1">Montes de Amoedo</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #56ab2f 0%, #a8e063 100%);">
-                            📷 <span id="cat2-img2">Senderos Rurales</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #56ab2f 0%, #a8e063 100%);">
-                            📷 <span id="cat2-img3">Flora Autóctona</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #56ab2f 0%, #a8e063 100%);">
-                            📷 <span id="cat2-img4">Vistas Panorámicas</span>
-                        </div>
-                    </div>
-
-                    <p id="cat2-desc" style="margin-top: 15px;">
-                        La belleza natural de Amoedo: sus montes, senderos, bosques y 
-                        los paisajes que hacen de nuestra parroquia un lugar único.
-                    </p>
-                </div>
-
-                <!-- Patrimonio -->
-                <div class="card card-terra reveal">
-                    <h2 style="color: #6a1b9a; border-color: #ba68c8;">⛪ <span id="cat3-title">Patrimonio</span></h2>
-
-                    <div class="data-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);">
-                            📷 <span id="cat3-img1">Iglesia San Amaro</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);">
-                            📷 <span id="cat3-img2">Cruceiros</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);">
-                            📷 <span id="cat3-img3">Arquitectura Rural</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);">
-                            📷 <span id="cat3-img4">Hórreos</span>
-                        </div>
-                    </div>
-
-                    <p id="cat3-desc" style="margin-top: 15px;">
-                        Nuestro patrimonio arquitectónico y cultural: iglesia parroquial, 
-                        cruceiros históricos, construcciones tradicionales y elementos 
-                        etnográficos.
-                    </p>
-                </div>
-
-                <!-- Vida Cotidiana -->
-                <div class="card card-blue reveal">
-                    <h2 style="color: #1565c0; border-color: #2196f3;">🏠 <span id="cat4-title">Vida Cotidiana</span></h2>
-
-                    <div class="data-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);">
-                            📷 <span id="cat4-img1">Vecinos</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);">
-                            📷 <span id="cat4-img2">Actividades</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);">
-                            📷 <span id="cat4-img3">Encuentros</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);">
-                            📷 <span id="cat4-img4">Tradiciones</span>
-                        </div>
-                    </div>
-
-                    <p id="cat4-desc" style="margin-top: 15px;">
-                        El día a día en Amoedo: vecinos, actividades comunitarias, 
-                        encuentros sociales y las tradiciones que mantienen vivo el 
-                        espíritu de nuestra parroquia.
-                    </p>
-                </div>
-
-                <!-- Polígono Industrial -->
-                <div class="card card-amber reveal">
-                    <h2 style="color: #e65100; border-color: #ffb74d;">🏭 <span id="cat5-title">Polígono Industrial</span></h2>
-
-                    <div class="data-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);">
-                            📷 <span id="cat5-img1">Vista General</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);">
-                            📷 <span id="cat5-img2">Empresas</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);">
-                            📷 <span id="cat5-img3">Infraestructuras</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);">
-                            📷 <span id="cat5-img4">Desarrollo</span>
-                        </div>
-                    </div>
-
-                    <p id="cat5-desc" style="margin-top: 15px;">
-                        El motor económico de Amoedo: imágenes del Polígono Industrial 
-                        Chan de Amoedo, sus empresas, infraestructuras y el desarrollo 
-                        que aporta a la zona.
-                    </p>
-                </div>
-
-                <!-- Fotos Históricas -->
-                <div class="card card-terra reveal">
-                    <h2 style="color: #c2185b; border-color: #ec407a;">📜 <span id="cat6-title">Fotos Históricas</span></h2>
-
-                    <div class="data-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%);">
-                            📷 <span id="cat6-img1">Amoedo Antiguo</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%);">
-                            📷 <span id="cat6-img2">Fiestas Pasadas</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%);">
-                            📷 <span id="cat6-img3">Vecinos de Antaño</span>
-                        </div>
-                        <div class="img-placeholder" style="background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%);">
-                            📷 <span id="cat6-img4">Evolución</span>
-                        </div>
-                    </div>
-
-                    <p id="cat6-desc" style="margin-top: 15px;">
-                        Un viaje al pasado: fotografías antiguas que documentan la historia 
-                        de Amoedo, sus fiestas tradicionales, vecinos de otras épocas y la 
-                        evolución de la parroquia a lo largo del tiempo.
-                    </p>
-                </div>
-
-                <!-- Colabora -->
-                <div class="card card-amber reveal">
-                    <h2 style="color: #d35400; border-color: #ffa502;">📤 <span id="colabora-title">Colabora con Nuestra Galería</span></h2>
-
-                    <p id="colabora-desc">
-                        ¿Tienes fotos de Amoedo que te gustaría compartir? Estamos 
-                        construyendo una galería visual que documente la vida y la historia 
-                        de nuestra parroquia. Tu colaboración es bienvenida.
-                    </p>
-
-                    <div class="info-box">
-                        <strong>📸 <span id="enviar-title">Cómo enviar tus fotos</span></strong>
-                        <ul id="enviar-list" style="margin: 10px 0;">
-                            <li><span id="paso1">Contacta con la Casa Cultural de Amoedo</span></li>
-                            <li><span id="paso2">Especialmente valiosas son las fotografías históricas</span></li>
-                            <li><span id="paso3">Incluye información sobre fecha, lugar y personas (si es posible)</span></li>
-                            <li><span id="paso4">Las fotos pueden ser digitalizadas si están en formato físico</span></li>
-                        </ul>
-                    </div>
-
-                    <p id="agradecimiento">
-                        <strong><span id="gracias">Gracias por ayudarnos a preservar la memoria visual de Amoedo</span></strong>
-                    </p>
-                </div>
-
-            </main>
+      <div class="card reveal">
+        <h2>📸 Galería de Fotos</h2>
+        <p>Descubre Amoedo a través de imágenes. Nuestra galería captura la esencia
+        de la parroquia: paisajes, celebraciones, patrimonio y vida cotidiana.</p>
+        <div class="photo-upload-notice">
+          <strong>📤 ¿Tienes fotos de Amoedo?</strong>
+          Comparte tus imágenes con la comunidad. Especialmente valiosas son las fotografías históricas.
+          Contacta con la Casa Cultural para colaborar.
         </div>
+      </div>
 
-  </div><!-- /page-body -->
+      <!-- Fiestas -->
+      <div class="card card-amber reveal">
+        <h2>🎉 Fiestas y Celebraciones</h2>
+        <div class="photo-grid">
+    <div class="photo-item" data-label="Romaría San Amaro" id="ph-f01">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf01" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#c0392b"/>
+            <stop offset="100%" stop-color="#8e44ad"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf01)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🎉</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Romaría San Amaro</text>
+      </svg>
+      <div class="photo-label">Romaría San Amaro</div>
+    </div>
+    <div class="photo-item" data-label="Procesión" id="ph-f02">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf02" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e74c3c"/>
+            <stop offset="100%" stop-color="#c0392b"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf02)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">⛪</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Procesión</text>
+      </svg>
+      <div class="photo-label">Procesión</div>
+    </div>
+    <div class="photo-item" data-label="Verbena" id="ph-f03">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf03" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#8e44ad"/>
+            <stop offset="100%" stop-color="#6c3483"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf03)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🎵</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Verbena</text>
+      </svg>
+      <div class="photo-label">Verbena</div>
+    </div>
+    <div class="photo-item" data-label="San Paio" id="ph-f04">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf04" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#d35400"/>
+            <stop offset="100%" stop-color="#a04000"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf04)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🥁</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">San Paio</text>
+      </svg>
+      <div class="photo-label">San Paio</div>
+    </div>
+        </div>
+        <p>Momentos inolvidables de nuestras fiestas patronales, procesiones y verbenas.</p>
+      </div>
 
-  <!-- FOOTER -->
+      <!-- Naturaleza -->
+      <div class="card card-green reveal">
+        <h2>🌳 Paisajes y Naturaleza</h2>
+        <div class="photo-grid">
+    <div class="photo-item" data-label="Montes de Amoedo" id="ph-f05">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf05" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a6b35"/>
+            <stop offset="100%" stop-color="#2d8a4e"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf05)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🌲</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Montes de Amoedo</text>
+      </svg>
+      <div class="photo-label">Montes de Amoedo</div>
+    </div>
+    <div class="photo-item" data-label="Senderos Rurales" id="ph-f06">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf06" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2e7d32"/>
+            <stop offset="100%" stop-color="#388e3c"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf06)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🥾</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Senderos Rurales</text>
+      </svg>
+      <div class="photo-label">Senderos Rurales</div>
+    </div>
+    <div class="photo-item" data-label="Flora Autóctona" id="ph-f07">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf07" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#33691e"/>
+            <stop offset="100%" stop-color="#558b2f"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf07)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🌿</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Flora Autóctona</text>
+      </svg>
+      <div class="photo-label">Flora Autóctona</div>
+    </div>
+    <div class="photo-item" data-label="Vistas Panorámicas" id="ph-f08">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf08" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1b5e20"/>
+            <stop offset="100%" stop-color="#2e7d32"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf08)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🏞️</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Vistas Panorámicas</text>
+      </svg>
+      <div class="photo-label">Vistas Panorámicas</div>
+    </div>
+        </div>
+        <p>La belleza natural de Amoedo: sus montes, senderos y bosques únicos.</p>
+      </div>
+
+      <!-- Patrimonio -->
+      <div class="card card-terra reveal">
+        <h2>⛪ Patrimonio</h2>
+        <div class="photo-grid">
+    <div class="photo-item" data-label="Iglesia San Amaro" id="ph-f09">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf09" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#5d4037"/>
+            <stop offset="100%" stop-color="#4e342e"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf09)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">⛪</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Iglesia San Amaro</text>
+      </svg>
+      <div class="photo-label">Iglesia San Amaro</div>
+    </div>
+    <div class="photo-item" data-label="Cruceiros" id="ph-f10">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf10" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6d4c41"/>
+            <stop offset="100%" stop-color="#5d4037"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf10)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">✝️</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Cruceiros</text>
+      </svg>
+      <div class="photo-label">Cruceiros</div>
+    </div>
+    <div class="photo-item" data-label="Arquitectura Rural" id="ph-f11">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf11" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4e342e"/>
+            <stop offset="100%" stop-color="#3e2723"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf11)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🏚️</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Arquitectura Rural</text>
+      </svg>
+      <div class="photo-label">Arquitectura Rural</div>
+    </div>
+    <div class="photo-item" data-label="Hórreos" id="ph-f12">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf12" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3e2723"/>
+            <stop offset="100%" stop-color="#311b92"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf12)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🌾</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Hórreos</text>
+      </svg>
+      <div class="photo-label">Hórreos</div>
+    </div>
+        </div>
+        <p>Iglesia parroquial, cruceiros históricos y elementos etnográficos de nuestra tierra.</p>
+      </div>
+
+      <!-- Polígono -->
+      <div class="card reveal">
+        <h2>🏭 Polígono Industrial</h2>
+        <div class="photo-grid">
+    <div class="photo-item" data-label="Vista General" id="ph-f13">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf13" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a237e"/>
+            <stop offset="100%" stop-color="#283593"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf13)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🏭</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Vista General</text>
+      </svg>
+      <div class="photo-label">Vista General</div>
+    </div>
+    <div class="photo-item" data-label="Empresas" id="ph-f14">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf14" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#283593"/>
+            <stop offset="100%" stop-color="#1565c0"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf14)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🏢</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Empresas</text>
+      </svg>
+      <div class="photo-label">Empresas</div>
+    </div>
+    <div class="photo-item" data-label="Logística" id="ph-f15">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf15" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0d47a1"/>
+            <stop offset="100%" stop-color="#01579b"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf15)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🚛</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Logística</text>
+      </svg>
+      <div class="photo-label">Logística</div>
+    </div>
+    <div class="photo-item" data-label="Industria" id="ph-f16">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf16" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#006064"/>
+            <stop offset="100%" stop-color="#00796b"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf16)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">⚙️</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Industria</text>
+      </svg>
+      <div class="photo-label">Industria</div>
+    </div>
+        </div>
+        <p>El motor económico de Amoedo: empresas, infraestructuras y desarrollo.</p>
+      </div>
+
+      <!-- Históricas -->
+      <div class="card card-terra reveal">
+        <h2>📜 Fotos Históricas</h2>
+        <div class="photo-grid">
+    <div class="photo-item" data-label="Amoedo Antiguo" id="ph-f17">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf17" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#757575"/>
+            <stop offset="100%" stop-color="#616161"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf17)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🏘️</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Amoedo Antiguo</text>
+      </svg>
+      <div class="photo-label">Amoedo Antiguo</div>
+    </div>
+    <div class="photo-item" data-label="Vecinos de Antaño" id="ph-f18">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf18" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#616161"/>
+            <stop offset="100%" stop-color="#424242"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf18)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">👥</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Vecinos de Antaño</text>
+      </svg>
+      <div class="photo-label">Vecinos de Antaño</div>
+    </div>
+    <div class="photo-item" data-label="Fiestas Pasadas" id="ph-f19">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf19" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#546e7a"/>
+            <stop offset="100%" stop-color="#455a64"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf19)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">🎊</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Fiestas Pasadas</text>
+      </svg>
+      <div class="photo-label">Fiestas Pasadas</div>
+    </div>
+    <div class="photo-item" data-label="Documentos" id="ph-f20">
+      <svg viewBox="0 0 240 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gf20" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4e342e"/>
+            <stop offset="100%" stop-color="#3e2723"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="180" fill="url(#gf20)"/>
+        <text x="120" y="80" text-anchor="middle" font-size="48" fill="rgba(255,255,255,.9)">📖</text>
+        <text x="120" y="130" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="600" fill="rgba(255,255,255,.85)">Documentos</text>
+      </svg>
+      <div class="photo-label">Documentos</div>
+    </div>
+        </div>
+        <p>Un viaje al pasado: fotografías que documentan la evolución de Amoedo.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lb-close">✕</button>
+      <button class="lightbox-nav lightbox-prev" id="lb-prev">‹</button>
+      <button class="lightbox-nav lightbox-next" id="lb-next">›</button>
+      <div id="lb-img"></div>
+      <p class="lightbox-caption" id="lb-caption"></p>
+    </div>
+  </div>
+
+
   <footer class="site-footer">
-    <p id="footer-text">Amoedo, 2026 · Pazos de Borbén, Galicia</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="header-title">Amoedo</div>
+        <p>Parroquia de San Amaro de Amoedo<br>Pazos de Borbén, Galicia</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../pages/historia.html">Historia</a></li>
+          <li><a href="../pages/fiestas.html">Fiestas</a></li>
+          <li><a href="../pages/fotos.html">Fotos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="../pages/poligono.html">Polígono Industrial</a></li>
+          <li><a href="../pages/comunidad-montes.html">Comunidad de Montes</a></li>
+          <li><a href="../pages/casa-cultural.html">Casa Cultural</a></li>
+          <li><a href="https://pazosdeborben.sedelectronica.gal/" target="_blank">Concello de Pazos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-text">© Amoedo 2026 · Pazos de Borbén, Galicia · Todos los derechos reservados</p>
+    </div>
   </footer>
 
-    <script src="../js/main.js"></script>
-    <script>
-        function updatePageTexts() {
-            const pageTranslations = {
-                es: {
-                    galeriaTitle: "Galería de Fotos",
-                    galeriaIntro: "Descubre Amoedo a través de imágenes. Nuestra galería fotográfica captura la esencia de la parroquia: sus paisajes, celebraciones, patrimonio y la vida cotidiana de nuestra comunidad.",
-                    cat1Title: "Fiestas y Celebraciones",
-                    cat1Img1: "Romaría San Amaro",
-                    cat1Img2: "Procesiones",
-                    cat1Img3: "Verbenas",
-                    cat1Img4: "San Paio",
-                    cat1Desc: "Momentos inolvidables de nuestras fiestas patronales, procesiones religiosas y verbenas populares que reúnen a toda la comunidad.",
-                    cat2Title: "Paisajes y Naturaleza",
-                    cat2Img1: "Montes de Amoedo",
-                    cat2Img2: "Senderos Rurales",
-                    cat2Img3: "Flora Autóctona",
-                    cat2Img4: "Vistas Panorámicas",
-                    cat2Desc: "La belleza natural de Amoedo: sus montes, senderos, bosques y los paisajes que hacen de nuestra parroquia un lugar único.",
-                    cat3Title: "Patrimonio",
-                    cat3Img1: "Iglesia San Amaro",
-                    cat3Img2: "Cruceiros",
-                    cat3Img3: "Arquitectura Rural",
-                    cat3Img4: "Hórreos",
-                    cat3Desc: "Nuestro patrimonio arquitectónico y cultural: iglesia parroquial, cruceiros históricos, construcciones tradicionales y elementos etnográficos.",
-                    cat4Title: "Vida Cotidiana",
-                    cat4Img1: "Vecinos",
-                    cat4Img2: "Actividades",
-                    cat4Img3: "Encuentros",
-                    cat4Img4: "Tradiciones",
-                    cat4Desc: "El día a día en Amoedo: vecinos, actividades comunitarias, encuentros sociales y las tradiciones que mantienen vivo el espíritu de nuestra parroquia.",
-                    cat5Title: "Polígono Industrial",
-                    cat5Img1: "Vista General",
-                    cat5Img2: "Empresas",
-                    cat5Img3: "Infraestructuras",
-                    cat5Img4: "Desarrollo",
-                    cat5Desc: "El motor económico de Amoedo: imágenes del Polígono Industrial Chan de Amoedo, sus empresas, infraestructuras y el desarrollo que aporta a la zona.",
-                    cat6Title: "Fotos Históricas",
-                    cat6Img1: "Amoedo Antiguo",
-                    cat6Img2: "Fiestas Pasadas",
-                    cat6Img3: "Vecinos de Antaño",
-                    cat6Img4: "Evolución",
-                    cat6Desc: "Un viaje al pasado: fotografías antiguas que documentan la historia de Amoedo, sus fiestas tradicionales, vecinos de otras épocas y la evolución de la parroquia a lo largo del tiempo.",
-                    colaboraTitle: "Colabora con Nuestra Galería",
-                    colaboraDesc: "¿Tienes fotos de Amoedo que te gustaría compartir? Estamos construyendo una galería visual que documente la vida y la historia de nuestra parroquia. Tu colaboración es bienvenida.",
-                    enviarTitle: "Cómo enviar tus fotos",
-                    paso1: "Contacta con la Casa Cultural de Amoedo",
-                    paso2: "Especialmente valiosas son las fotografías históricas",
-                    paso3: "Incluye información sobre fecha, lugar y personas (si es posible)",
-                    paso4: "Las fotos pueden ser digitalizadas si están en formato físico",
-                    gracias: "Gracias por ayudarnos a preservar la memoria visual de Amoedo"
-                },
-                gl: {
-                    galeriaTitle: "Galería de Fotos",
-                    galeriaIntro: "Descubre Amoedo a través de imaxes. A nosa galería fotográfica captura a esencia da parroquia: as súas paisaxes, celebracións, patrimonio e a vida cotiá da nosa comunidade.",
-                    cat1Title: "Festas e Celebracións",
-                    cat1Img1: "Romaría San Amaro",
-                    cat1Img2: "Procesións",
-                    cat1Img3: "Verbenas",
-                    cat1Img4: "San Paio",
-                    cat1Desc: "Momentos inesquecibles das nosas festas patronais, procesións relixiosas e verbenas populares que reúnen a toda a comunidade.",
-                    cat2Title: "Paisaxes e Natureza",
-                    cat2Img1: "Montes de Amoedo",
-                    cat2Img2: "Sendeiros Rurais",
-                    cat2Img3: "Flora Autóctona",
-                    cat2Img4: "Vistas Panorámicas",
-                    cat2Desc: "A beleza natural de Amoedo: os seus montes, sendeiros, bosques e as paisaxes que fan da nosa parroquia un lugar único.",
-                    cat3Title: "Patrimonio",
-                    cat3Img1: "Igrexa San Amaro",
-                    cat3Img2: "Cruceiros",
-                    cat3Img3: "Arquitectura Rural",
-                    cat3Img4: "Hórreos",
-                    cat3Desc: "O noso patrimonio arquitectónico e cultural: igrexa parroquial, cruceiros históricos, construcións tradicionais e elementos etnográficos.",
-                    cat4Title: "Vida Cotiá",
-                    cat4Img1: "Veciños",
-                    cat4Img2: "Actividades",
-                    cat4Img3: "Encontros",
-                    cat4Img4: "Tradicións",
-                    cat4Desc: "O día a día en Amoedo: veciños, actividades comunitarias, encontros sociais e as tradicións que manteñen vivo o espírito da nosa parroquia.",
-                    cat5Title: "Polígono Industrial",
-                    cat5Img1: "Vista Xeral",
-                    cat5Img2: "Empresas",
-                    cat5Img3: "Infraestruturas",
-                    cat5Img4: "Desenvolvemento",
-                    cat5Desc: "O motor económico de Amoedo: imaxes do Polígono Industrial Chan de Amoedo, as súas empresas, infraestruturas e o desenvolvemento que achega á zona.",
-                    cat6Title: "Fotos Históricas",
-                    cat6Img1: "Amoedo Antigo",
-                    cat6Img2: "Festas Pasadas",
-                    cat6Img3: "Veciños de Antano",
-                    cat6Img4: "Evolución",
-                    cat6Desc: "Unha viaxe ao pasado: fotografías antigas que documentan a historia de Amoedo, as súas festas tradicionais, veciños doutras épocas e a evolución da parroquia ao longo do tempo.",
-                    colaboraTitle: "Colabora coa Nosa Galería",
-                    colaboraDesc: "¿Tes fotos de Amoedo que che gustaría compartir? Estamos construíndo unha galería visual que documente a vida e a historia da nosa parroquia. A túa colaboración é benvida.",
-                    enviarTitle: "Como enviar as túas fotos",
-                    paso1: "Contacta coa Casa Cultural de Amoedo",
-                    paso2: "Especialmente valiosas son as fotografías históricas",
-                    paso3: "Inclúe información sobre data, lugar e persoas (se é posible)",
-                    paso4: "As fotos poden ser dixitalizadas se están en formato físico",
-                    gracias: "Grazas por axudarnos a preservar a memoria visual de Amoedo"
-                }
-            };
+  <script src="../js/main.js"></script>
+  <script src="../js/ui.js"></script>
+  
 
-            const pt = pageTranslations[currentLang];
-            const ids = ['galeria-title', 'galeria-intro', 'cat1-title', 'cat1-img1', 'cat1-img2',
-                'cat1-img3', 'cat1-img4', 'cat1-desc', 'cat2-title', 'cat2-img1', 'cat2-img2',
-                'cat2-img3', 'cat2-img4', 'cat2-desc', 'cat3-title', 'cat3-img1', 'cat3-img2',
-                'cat3-img3', 'cat3-img4', 'cat3-desc', 'cat4-title', 'cat4-img1', 'cat4-img2',
-                'cat4-img3', 'cat4-img4', 'cat4-desc', 'cat5-title', 'cat5-img1', 'cat5-img2',
-                'cat5-img3', 'cat5-img4', 'cat5-desc', 'cat6-title', 'cat6-img1', 'cat6-img2',
-                'cat6-img3', 'cat6-img4', 'cat6-desc', 'colabora-title', 'colabora-desc',
-                'enviar-title', 'paso1', 'paso2', 'paso3', 'paso4', 'gracias'];
-
-            ids.forEach(id => {
-                const el = document.getElementById(id);
-                const key = id.replace(/-/g, '').replace(/\d+/g, '');
-                if (el && pt[key]) {
-                    el.textContent = pt[key];
-                }
-            });
-        }
-    </script>
 </body>
 </html>

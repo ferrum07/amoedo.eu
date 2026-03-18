@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidad de Montes de Amoedo</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidad de Montes — Amoedo</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+  <!-- EVENT BANNER -->
+  <div class="event-banner">
+    <span>🎉 Romaría de San Amaro · 15 de enero</span>
+    <span class="banner-countdown" id="banner-countdown">cargando...</span>
+    <a href="../pages/fiestas.html">Ver programa</a>
+  </div>
+
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
@@ -18,29 +26,45 @@
         </div>
       </a>
       <div class="header-spacer"></div>
-      <div class="lang-selector">
-        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
-        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      <div class="header-actions">
+        <button class="dark-toggle" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+        <div class="lang-selector">
+          <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+          <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- NAV -->
+  <!-- DESKTOP NAV -->
   <nav class="site-nav">
     <div class="nav-inner">
       <a href="../index.html" class="nav-link" id="nav-home">Inicio</a>
-      <a href="poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
-      <a href="comunidad-montes.html" class="nav-link active" id="nav-montes">Comunidad de Montes</a>
-      <a href="historia.html" class="nav-link" id="nav-history">Historia</a>
-      <a href="casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
-      <a href="fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
-      <a href="fotos.html" class="nav-link" id="nav-photos">Fotos</a>
+      <a href="../pages/poligono.html" class="nav-link" id="nav-polygon">Polígono</a>
+      <a href="../pages/comunidad-montes.html" class="nav-link active" id="nav-montes">Comunidad de Montes</a>
+      <a href="../pages/historia.html" class="nav-link" id="nav-history">Historia</a>
+      <a href="../pages/casa-cultural.html" class="nav-link" id="nav-cultura">Casa Cultural</a>
+      <a href="../pages/fiestas.html" class="nav-link" id="nav-events">Fiestas</a>
+      <a href="../pages/fotos.html" class="nav-link" id="nav-photos">Fotos</a>
     </div>
   </nav>
 
-  <!-- BODY -->
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close">✕</button>
+    <a href="../index.html" class="nav-link">Inicio</a>
+    <a href="../pages/poligono.html" class="nav-link">Polígono</a>
+    <a href="../pages/comunidad-montes.html" class="nav-link active">Comunidad de Montes</a>
+    <a href="../pages/historia.html" class="nav-link">Historia</a>
+    <a href="../pages/casa-cultural.html" class="nav-link">Casa Cultural</a>
+    <a href="../pages/fiestas.html" class="nav-link">Fiestas</a>
+    <a href="../pages/fotos.html" class="nav-link">Fotos</a>
+  </div>
 
-  <div class="page-body">
+<div class="page-body">
     <div class="page-main">
             <main>
                 <!-- Introducción -->
@@ -325,203 +349,39 @@
 
   </div><!-- /page-body -->
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <p id="footer-text">Amoedo, 2026 · Pazos de Borbén, Galicia</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="header-title">Amoedo</div>
+        <p>Parroquia de San Amaro de Amoedo<br>Pazos de Borbén, Galicia</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../pages/historia.html">Historia</a></li>
+          <li><a href="../pages/fiestas.html">Fiestas</a></li>
+          <li><a href="../pages/fotos.html">Fotos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="../pages/poligono.html">Polígono Industrial</a></li>
+          <li><a href="../pages/comunidad-montes.html">Comunidad de Montes</a></li>
+          <li><a href="../pages/casa-cultural.html">Casa Cultural</a></li>
+          <li><a href="https://pazosdeborben.sedelectronica.gal/" target="_blank">Concello de Pazos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-text">© Amoedo 2026 · Pazos de Borbén, Galicia · Todos los derechos reservados</p>
+    </div>
   </footer>
 
-    <script src="../js/main.js"></script>
-    <script>
-        function updatePageTexts() {
-            const pageTranslations = {
-                es: {
-                    montesTitle: "Comunidad de Montes de Amoedo",
-                    montesIntro: "La Comunidad de Montes Vecinales en Mano Común de Amoedo es una entidad centenaria que gestiona de forma sostenible los recursos forestales de la parroquia. Como propietarios colectivos del monte, los vecinos de Amoedo trabajan unidos en la conservación, aprovechamiento y mejora de nuestro patrimonio natural.",
-                    queEsTitle: "¿Qué es una Comunidad de Montes?",
-                    queEsDesc: "Las Comunidades de Montes Vecinales en Mano Común son instituciones de derecho privado reconocidas por la legislación gallega. Representan una forma histórica de propiedad colectiva donde los vecinos de una parroquia gestionan conjuntamente los montes que les pertenecen por tradición ancestral.",
-                    dato1: "Propiedad Colectiva",
-                    dato2: "Gestión Sostenible",
-                    dato3: "Tradición Ancestral",
-                    funcionesTitle: "Funciones y Objetivos",
-                    funcionesIntro: "La Comunidad de Montes de Amoedo tiene como misión principal la gestión sostenible del patrimonio forestal, generando beneficios para todos los vecinos mientras se preserva el monte para las futuras generaciones.",
-                    gestionTitle: "Gestión Forestal",
-                    gestionDesc: "Planificación y ejecución de trabajos forestales: reforestación, limpiezas, podas y aprovechamientos madereros sostenibles que garantizan la salud del monte.",
-                    prevencionTitle: "Prevención de Incendios",
-                    prevencionDesc: "Mantenimiento de cortafuegos, limpieza de sotobosque y vigilancia activa durante los meses de mayor riesgo para proteger nuestro patrimonio natural.",
-                    aprovechamientoTitle: "Aprovechamiento Económico",
-                    aprovechamientoDesc: "Obtención de recursos económicos mediante la venta de madera, resina y otros productos forestales, cuyos beneficios se destinan a obras de interés para la comunidad.",
-                    conservacionTitle: "Conservación Ambiental",
-                    conservacionDesc: "Protección de la biodiversidad, conservación de especies autóctonas y mantenimiento del equilibrio ecológico del ecosistema forestal.",
-                    organosTitle: "Órganos de Gobierno",
-                    organosIntro: "La Comunidad de Montes se rige democráticamente mediante órganos de gobierno elegidos por la Asamblea General de Comuneros.",
-                    asambleaTitle: "Asamblea General",
-                    asambleaDesc: "Órgano supremo de la Comunidad, formado por todos los vecinos con derecho a voto. Se reúne periódicamente para tomar decisiones importantes, aprobar presupuestos y elegir a la Junta Rectora.",
-                    juntaTitle: "Junta Rectora",
-                    juntaDesc: "Órgano ejecutivo que gestiona el día a día de la Comunidad. Formada por presidente, vicepresidente, secretario, tesorero y vocales elegidos democráticamente entre los comuneros.",
-                    actividadesTitle: "Actividades y Proyectos",
-                    actividadesIntro: "A lo largo del año, la Comunidad de Montes desarrolla múltiples actividades y proyectos orientados a la mejora y conservación de nuestros montes.",
-                    act1Label: "Reforestación:",
-                    act1: "Plantación de especies autóctonas en zonas degradadas",
-                    act2Label: "Aprovechamientos Madereros:",
-                    act2: "Cortas selectivas y sostenibles de eucalipto y pino",
-                    act3Label: "Mantenimiento de Cortafuegos:",
-                    act3: "Limpieza y desbroce preventivo",
-                    act4Label: "Mejora de Accesos:",
-                    act4: "Mantenimiento de pistas forestales",
-                    act5Label: "Gestión Hídrica:",
-                    act5: "Limpieza de regueros y conservación de fuentes",
-                    act6Label: "Planes de Ordenación:",
-                    act6: "Planificación técnica de la gestión forestal",
-                    act7Label: "Obras de Mejora Social:",
-                    act7: "Inversión en infraestructuras de la parroquia",
-                    beneficiosTitle: "Beneficios para la Comunidad",
-                    beneficiosDesc: "Los ingresos generados por la Comunidad de Montes revierten directamente en mejoras para toda la parroquia de Amoedo:",
-                    beneficio1: "Infraestructuras",
-                    beneficio2: "Fiestas Patronales",
-                    beneficio3: "Mejoras Sociales",
-                    beneficio4: "Patrimonio",
-                    beneficio5: "Medio Ambiente",
-                    beneficio6: "Educación",
-                    ejemplosTitle: "Ejemplos de Inversiones Realizadas",
-                    ejemplo1: "Mejora y mantenimiento de caminos rurales",
-                    ejemplo2: "Aportaciones a las fiestas de San Amaro",
-                    ejemplo3: "Colaboración en obras de la iglesia parroquial",
-                    ejemplo4: "Apoyo a actividades culturales y deportivas",
-                    ejemplo5: "Instalación de mobiliario urbano y zonas recreativas",
-                    comuneroTitle: "¿Cómo ser Comunero?",
-                    comuneroDesc: "Son comuneros todos los vecinos empadronados en Amoedo mayores de 18 años. La condición de comunero otorga derechos y deberes:",
-                    derechosTitle: "Derechos",
-                    derecho1: "Voto en la Asamblea General",
-                    derecho2: "Ser elegido para la Junta Rectora",
-                    derecho3: "Acceso a información de la gestión",
-                    derecho4: "Participar en decisiones importantes",
-                    deberesTitle: "Deberes",
-                    deber1: "Cumplir los estatutos",
-                    deber2: "Respetar decisiones de la Asamblea",
-                    deber3: "Contribuir a la conservación del monte",
-                    deber4: "Participar activamente en la comunidad",
-                    sostenibleTitle: "Compromiso con el Desarrollo Sostenible",
-                    sostenibleDesc: "La Comunidad de Montes de Amoedo está comprometida con la gestión forestal sostenible, equilibrando el aprovechamiento económico con la conservación ambiental y el bienestar social.",
-                    sostenible1Title: "Ambiental",
-                    sostenible1: "Protección de ecosistemas y biodiversidad",
-                    sostenible2Title: "Económico",
-                    sostenible2: "Generación de recursos para la comunidad",
-                    sostenible3Title: "Social",
-                    sostenible3: "Bienestar y desarrollo de la parroquia",
-                    webTitle: "Más Información",
-                    webDesc: "Para conocer más detalles sobre la Comunidad de Montes de Amoedo, sus actividades, proyectos y convocatorias de asambleas, visita nuestra web oficial:",
-                    visitarWeb: "Visitar Web Oficial",
-                    contactoTitle: "Contacto",
-                    contactoDesc: "Para consultas, sugerencias o solicitud de información, puedes contactar con la Junta Rectora a través de la web oficial o dirigiéndote directamente a cualquier miembro de la Junta."
-                },
-                gl: {
-                    montesTitle: "Comunidade de Montes de Amoedo",
-                    montesIntro: "A Comunidade de Montes Veciñais en Man Común de Amoedo é unha entidade centenaria que xestiona de forma sostible os recursos forestais da parroquia. Como propietarios colectivos do monte, os veciños de Amoedo traballan unidos na conservación, aproveitamento e mellora do noso patrimonio natural.",
-                    queEsTitle: "¿Que é unha Comunidade de Montes?",
-                    queEsDesc: "As Comunidades de Montes Veciñais en Man Común son institucións de dereito privado recoñecidas pola lexislación galega. Representan unha forma histórica de propiedade colectiva onde os veciños dunha parroquia xestionan conxuntamente os montes que lles pertencen por tradición ancestral.",
-                    dato1: "Propiedade Colectiva",
-                    dato2: "Xestión Sostible",
-                    dato3: "Tradición Ancestral",
-                    funcionesTitle: "Funcións e Obxectivos",
-                    funcionesIntro: "A Comunidade de Montes de Amoedo ten como misión principal a xestión sostible do patrimonio forestal, xerando beneficios para todos os veciños mentres se preserva o monte para as futuras xeracións.",
-                    gestionTitle: "Xestión Forestal",
-                    gestionDesc: "Planificación e execución de traballos forestais: reforestación, limpezas, podas e aproveitamentos madeireiros sostibles que garanten a saúde do monte.",
-                    prevencionTitle: "Prevención de Incendios",
-                    prevencionDesc: "Mantemento de cortalumes, limpeza de sotobosque e vixilancia activa durante os meses de maior risco para protexer o noso patrimonio natural.",
-                    aprovechamientoTitle: "Aproveitamento Económico",
-                    aprovechamientoDesc: "Obtención de recursos económicos mediante a venda de madeira, resina e outros produtos forestais, cuxos beneficios se destinan a obras de interese para a comunidade.",
-                    conservacionTitle: "Conservación Ambiental",
-                    conservacionDesc: "Protección da biodiversidade, conservación de especies autóctonas e mantemento do equilibrio ecolóxico do ecosistema forestal.",
-                    organosTitle: "Órganos de Goberno",
-                    organosIntro: "A Comunidade de Montes ríxese democraticamente mediante órganos de goberno elixidos pola Asemblea Xeral de Comuneiros.",
-                    asambleaTitle: "Asemblea Xeral",
-                    asambleaDesc: "Órgano supremo da Comunidade, formado por todos os veciños con dereito a voto. Reúnese periodicamente para tomar decisións importantes, aprobar orzamentos e elixir á Xunta Rectora.",
-                    juntaTitle: "Xunta Rectora",
-                    juntaDesc: "Órgano executivo que xestiona o día a día da Comunidade. Formada por presidente, vicepresidente, secretario, tesoureiro e vocais elixidos democraticamente entre os comuneiros.",
-                    actividadesTitle: "Actividades e Proxectos",
-                    actividadesIntro: "Ao longo do ano, a Comunidade de Montes desenvolve múltiples actividades e proxectos orientados á mellora e conservación dos nosos montes.",
-                    act1Label: "Reforestación:",
-                    act1: "Plantación de especies autóctonas en zonas degradadas",
-                    act2Label: "Aproveitamentos Madeireiros:",
-                    act2: "Cortas selectivas e sostibles de eucalipto e piñeiro",
-                    act3Label: "Mantemento de Cortalumes:",
-                    act3: "Limpeza e desbroce preventivo",
-                    act4Label: "Mellora de Accesos:",
-                    act4: "Mantemento de pistas forestais",
-                    act5Label: "Xestión Hídrica:",
-                    act5: "Limpeza de regueiros e conservación de fontes",
-                    act6Label: "Plans de Ordenación:",
-                    act6: "Planificación técnica da xestión forestal",
-                    act7Label: "Obras de Mellora Social:",
-                    act7: "Investimento en infraestruturas da parroquia",
-                    beneficiosTitle: "Beneficios para a Comunidade",
-                    beneficiosDesc: "Os ingresos xerados pola Comunidade de Montes reverten directamente en melloras para toda a parroquia de Amoedo:",
-                    beneficio1: "Infraestruturas",
-                    beneficio2: "Festas Patronais",
-                    beneficio3: "Melloras Sociais",
-                    beneficio4: "Patrimonio",
-                    beneficio5: "Medio Ambiente",
-                    beneficio6: "Educación",
-                    ejemplosTitle: "Exemplos de Investimentos Realizadas",
-                    ejemplo1: "Mellora e mantemento de camiños rurais",
-                    ejemplo2: "Aportacións ás festas de San Amaro",
-                    ejemplo3: "Colaboración en obras da igrexa parroquial",
-                    ejemplo4: "Apoio a actividades culturais e deportivas",
-                    ejemplo5: "Instalación de mobiliario urbano e zonas recreativas",
-                    comuneroTitle: "¿Como ser Comuneiro?",
-                    comuneroDesc: "Son comuneiros todos os veciños empadroados en Amoedo maiores de 18 anos. A condición de comuneiro outorga dereitos e deberes:",
-                    derechosTitle: "Dereitos",
-                    derecho1: "Voto na Asemblea Xeral",
-                    derecho2: "Ser elixido para a Xunta Rectora",
-                    derecho3: "Acceso a información da xestión",
-                    derecho4: "Participar en decisións importantes",
-                    deberesTitle: "Deberes",
-                    deber1: "Cumprir os estatutos",
-                    deber2: "Respectar decisións da Asemblea",
-                    deber3: "Contribuír á conservación do monte",
-                    deber4: "Participar activamente na comunidade",
-                    sostenibleTitle: "Compromiso co Desenvolvemento Sostible",
-                    sostenibleDesc: "A Comunidade de Montes de Amoedo está comprometida coa xestión forestal sostible, equilibrando o aproveitamento económico coa conservación ambiental e o benestar social.",
-                    sostenible1Title: "Ambiental",
-                    sostenible1: "Protección de ecosistemas e biodiversidade",
-                    sostenible2Title: "Económico",
-                    sostenible2: "Xeración de recursos para a comunidade",
-                    sostenible3Title: "Social",
-                    sostenible3: "Benestar e desenvolvemento da parroquia",
-                    webTitle: "Máis Información",
-                    webDesc: "Para coñecer máis detalles sobre a Comunidade de Montes de Amoedo, as súas actividades, proxectos e convocatorias de asembleas, visita a nosa web oficial:",
-                    visitarWeb: "Visitar Web Oficial",
-                    contactoTitle: "Contacto",
-                    contactoDesc: "Para consultas, suxestións ou solicitude de información, podes contactar coa Xunta Rectora a través da web oficial ou dirixíndote directamente a calquera membro da Xunta."
-                }
-            };
+  <script src="../js/main.js"></script>
+  <script src="../js/ui.js"></script>
+  
 
-            const pt = pageTranslations[currentLang];
-
-            // Actualizar todos los elementos de texto
-            const ids = ['montes-title', 'montes-intro', 'que-es-title', 'que-es-desc', 'dato1', 'dato2', 
-                'dato3', 'funciones-title', 'funciones-intro', 'gestion-title', 'gestion-desc', 
-                'prevencion-title', 'prevencion-desc', 'aprovechamiento-title', 'aprovechamiento-desc',
-                'conservacion-title', 'conservacion-desc', 'organos-title', 'organos-intro',
-                'asamblea-title', 'asamblea-desc', 'junta-title', 'junta-desc', 'actividades-title',
-                'actividades-intro', 'act1-label', 'act1', 'act2-label', 'act2', 'act3-label', 'act3',
-                'act4-label', 'act4', 'act5-label', 'act5', 'act6-label', 'act6', 'act7-label', 'act7',
-                'beneficios-title', 'beneficios-desc', 'beneficio1', 'beneficio2', 'beneficio3',
-                'beneficio4', 'beneficio5', 'beneficio6', 'ejemplos-title', 'ejemplo1', 'ejemplo2',
-                'ejemplo3', 'ejemplo4', 'ejemplo5', 'comunero-title', 'comunero-desc', 'derechos-title',
-                'derecho1', 'derecho2', 'derecho3', 'derecho4', 'deberes-title', 'deber1', 'deber2',
-                'deber3', 'deber4', 'sostenible-title', 'sostenible-desc', 'sostenible1-title',
-                'sostenible1', 'sostenible2-title', 'sostenible2', 'sostenible3-title', 'sostenible3',
-                'web-title', 'web-desc', 'visitar-web', 'contacto-title', 'contacto-desc'];
-
-            ids.forEach(id => {
-                const el = document.getElementById(id);
-                const key = id.replace(/-/g, '').replace(/\d+/g, '');
-                if (el && pt[key]) {
-                    el.textContent = pt[key];
-                }
-            });
-        }
-    </script>
 </body>
 </html>

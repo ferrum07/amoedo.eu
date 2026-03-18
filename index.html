@@ -5,8 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amoedo — Pazos de Borbén</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
 </head>
 <body>
+
+  <!-- EVENT BANNER -->
+  <div class="event-banner">
+    <span>🎉 Romaría de San Amaro · 15 de enero</span>
+    <span class="banner-countdown" id="banner-countdown">cargando...</span>
+    <a href="pages/fiestas.html">Ver programa</a>
+  </div>
 
   <!-- HEADER -->
   <header class="site-header">
@@ -19,14 +27,20 @@
         </div>
       </a>
       <div class="header-spacer"></div>
-      <div class="lang-selector">
-        <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
-        <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+      <div class="header-actions">
+        <button class="dark-toggle" onclick="toggleDark()" title="Modo oscuro">🌙</button>
+        <div class="lang-selector">
+          <button class="lang-btn active" id="lang-es" onclick="changeLanguage('es')">ES</button>
+          <button class="lang-btn" id="lang-gl" onclick="changeLanguage('gl')">GAL</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- NAV -->
+  <!-- DESKTOP NAV -->
   <nav class="site-nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-link active" id="nav-home">Inicio</a>
@@ -39,53 +53,131 @@
     </div>
   </nav>
 
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-nav-close">✕</button>
+    <a href="index.html" class="nav-link active">Inicio</a>
+    <a href="pages/poligono.html" class="nav-link">Polígono</a>
+    <a href="pages/comunidad-montes.html" class="nav-link">Comunidad de Montes</a>
+    <a href="pages/historia.html" class="nav-link">Historia</a>
+    <a href="pages/casa-cultural.html" class="nav-link">Casa Cultural</a>
+    <a href="pages/fiestas.html" class="nav-link">Fiestas</a>
+    <a href="pages/fotos.html" class="nav-link">Fotos</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-bg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <!-- Sky -->
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#4a7fa5"/>
+          <stop offset="100%" stop-color="#7fb3d3"/>
+        </linearGradient>
+        <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2a4d35"/>
+          <stop offset="100%" stop-color="#1a3025"/>
+        </linearGradient>
+        <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3d6b4a"/>
+          <stop offset="100%" stop-color="#2a4d35"/>
+        </linearGradient>
+        <linearGradient id="hill3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1e3828"/>
+          <stop offset="100%" stop-color="#111e16"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="400" fill="url(#sky)"/>
+      <!-- Clouds -->
+      <ellipse cx="200" cy="80" rx="90" ry="28" fill="rgba(255,255,255,.35)"/>
+      <ellipse cx="260" cy="70" rx="70" ry="22" fill="rgba(255,255,255,.3)"/>
+      <ellipse cx="800" cy="60" rx="110" ry="30" fill="rgba(255,255,255,.28)"/>
+      <ellipse cx="870" cy="52" rx="75" ry="22" fill="rgba(255,255,255,.22)"/>
+      <ellipse cx="1050" cy="90" rx="80" ry="24" fill="rgba(255,255,255,.2)"/>
+      <!-- Back hills -->
+      <path d="M0,220 Q200,140 400,180 Q600,130 800,170 Q1000,120 1200,160 L1200,400 L0,400Z" fill="url(#hill2)"/>
+      <!-- Mid hills -->
+      <path d="M0,270 Q150,220 300,250 Q500,200 700,240 Q900,190 1100,230 L1200,240 L1200,400 L0,400Z" fill="url(#hill1)"/>
+      <!-- Church silhouette -->
+      <rect x="560" y="195" width="28" height="65" fill="#162218"/>
+      <polygon points="560,195 574,172 588,195" fill="#162218"/>
+      <rect x="568" y="175" width="4" height="16" fill="#1e3026"/>
+      <rect x="566" y="182" width="8" height="3" fill="#1e3026"/>
+      <rect x="542" y="220" width="64" height="40" fill="#162218"/>
+      <rect x="566" y="230" width="12" height="18" fill="#0f1a12" opacity=".7"/>
+      <!-- Trees -->
+      <rect x="510" y="230" width="6" height="28" fill="#111a14"/>
+      <ellipse cx="513" cy="226" rx="14" ry="18" fill="#1a2f20"/>
+      <rect x="640" y="235" width="5" height="22" fill="#111a14"/>
+      <ellipse cx="642" cy="230" rx="12" ry="16" fill="#1e3828"/>
+      <rect x="490" y="238" width="5" height="20" fill="#111a14"/>
+      <ellipse cx="492" cy="234" rx="10" ry="14" fill="#162218"/>
+      <!-- Foreground -->
+      <path d="M0,310 Q300,270 600,290 Q900,260 1200,285 L1200,400 L0,400Z" fill="url(#hill3)"/>
+      <!-- Foreground trees -->
+      <rect x="60" y="295" width="7" height="38" fill="#0a1510"/>
+      <ellipse cx="63" cy="288" rx="18" ry="22" fill="#162218"/>
+      <rect x="100" y="302" width="6" height="32" fill="#0a1510"/>
+      <ellipse cx="103" cy="295" rx="14" ry="18" fill="#1a2f20"/>
+      <rect x="1100" y="290" width="8" height="40" fill="#0a1510"/>
+      <ellipse cx="1104" cy="282" rx="20" ry="24" fill="#162218"/>
+      <rect x="1140" y="298" width="6" height="32" fill="#0a1510"/>
+      <ellipse cx="1143" cy="292" rx="14" ry="18" fill="#1a2f20"/>
+    </svg>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title" id="welcome-title">Bienvenidos al<br>Paraíso Rural</h1>
+      <p class="hero-subtitle" id="welcome-text">
+        Descubre la magia de Amoedo. Donde el verde de nuestros montes
+        se encuentra con la tranquilidad del futuro. Un lugar ideal para
+        desconectar y respirar aire puro.
+      </p>
+      <div class="hero-badges">
+        <span class="hero-badge">⛪ Parroquia de San Amaro</span>
+        <span class="hero-badge">🌿 Pazos de Borbén</span>
+        <span class="hero-badge">📍 Galicia</span>
+      </div>
+    </div>
+  </section>
+
   <!-- BODY -->
   <div class="page-body">
     <div class="page-grid">
 
-      <!-- MAIN -->
       <main class="page-main">
 
         <div class="card reveal">
-          <h2>🏞️ <span id="welcome-title">Bienvenidos al Paraíso Rural</span></h2>
-
-          <div class="img-placeholder" style="background: linear-gradient(135deg, #2a4d35 0%, #3d7548 60%, #72b583 100%);">
-            🏔️ &nbsp; Vista de Amoedo
+          <h2>📍 <span id="places-title">Lugares de Interés</span></h2>
+          <div class="data-grid">
+            <div class="data-item"><span class="data-icon">🏔️</span><span class="data-label" id="place-1">O Pouso</span></div>
+            <div class="data-item"><span class="data-icon">⛪</span><span class="data-label" id="place-2">La Iglesia</span></div>
+            <div class="data-item"><span class="data-icon">🥾</span><span class="data-label" id="place-3">Rutas de Senderismo</span></div>
           </div>
-
-          <p id="welcome-text">
-            Descubre la magia de Amoedo. Donde el verde de nuestros montes se encuentra
-            con la tranquilidad del futuro. Un lugar ideal para desconectar y respirar aire puro.
-          </p>
         </div>
 
         <div class="card reveal">
-          <h2>📍 <span id="places-title">Lugares de Interés</span></h2>
-
-          <div class="data-grid">
-            <div class="data-item">
-              <span class="data-icon">🏔️</span>
-              <span class="data-label" id="place-1">O Pouso</span>
-            </div>
-            <div class="data-item">
-              <span class="data-icon">⛪</span>
-              <span class="data-label" id="place-2">La Iglesia</span>
-            </div>
-            <div class="data-item">
-              <span class="data-icon">🥾</span>
-              <span class="data-label" id="place-3">Rutas de Senderismo</span>
-            </div>
+          <h2>⚡ Últimas Noticias</h2>
+          <div class="info-box">
+            <strong>🏭 Polígono Industrial en expansión</strong>
+            <p>El Chan de Amoedo continúa atrayendo nuevas empresas en 2026, consolidando su posición como polo económico del sur de Pontevedra.</p>
+          </div>
+          <div class="info-box">
+            <strong>📚 Digitalización del archivo parroquial</strong>
+            <p>Proyecto en marcha para preservar documentos históricos desde el siglo XIII en formato digital accesible a todos.</p>
+          </div>
+          <div class="info-box">
+            <strong>🏛️ Casa Cultural renovada en 2025</strong>
+            <p>Reforma integral completada con nuevos espacios, equipamiento moderno y agenda cultural para toda la comunidad.</p>
           </div>
         </div>
 
       </main>
 
-      <!-- ASIDE -->
       <aside class="page-aside">
 
         <div class="widget weather-widget reveal" id="weather-widget">
           <h3 id="weather-title">El Tiempo</h3>
-          <div id="weather-loading" class="loading">Cargando datos del tiempo…</div>
+          <div class="loading">Cargando…</div>
         </div>
 
         <div class="widget event-widget reveal">
@@ -93,14 +185,19 @@
           <div class="event-content">
             <span class="event-icon">🎉</span>
             <h4 id="event-name">Romaría de San Amaro</h4>
-            <p class="event-date" id="event-date">15 de enero de 2026</p>
+            <p class="event-date" id="event-date">15 de enero</p>
             <div class="countdown">
               <span class="countdown-number" id="days-left">—</span>
               <span class="countdown-label" id="days-label">días</span>
             </div>
             <p class="event-desc" id="event-desc">Misa, procesión y verbena con Orquesta Saudade</p>
-            <a href="pages/fiestas.html" class="btn btn-amber" id="event-btn">Ver programa</a>
+            <a href="pages/fiestas.html" class="btn btn-amber btn-sm" id="event-btn">Ver programa</a>
           </div>
+        </div>
+
+        <div class="widget map-widget reveal">
+          <h3>📍 Localización</h3>
+          <div id="mini-map"></div>
         </div>
 
         <div class="widget links-widget reveal">
@@ -116,11 +213,54 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+
   <footer class="site-footer">
-    <p id="footer-text">Amoedo, 2026 &nbsp;·&nbsp; Pazos de Borbén, Galicia</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="header-title">Amoedo</div>
+        <p>Parroquia de San Amaro de Amoedo<br>Pazos de Borbén, Galicia</p>
+      </div>
+      <div class="footer-links">
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="pages/historia.html">Historia</a></li>
+          <li><a href="pages/fiestas.html">Fiestas</a></li>
+          <li><a href="pages/fotos.html">Fotos</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="pages/poligono.html">Polígono Industrial</a></li>
+          <li><a href="pages/comunidad-montes.html">Comunidad de Montes</a></li>
+          <li><a href="pages/casa-cultural.html">Casa Cultural</a></li>
+          <li><a href="https://pazosdeborben.sedelectronica.gal/" target="_blank">Concello de Pazos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-text">© Amoedo 2026 · Pazos de Borbén, Galicia · Todos los derechos reservados</p>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var map = L.map('mini-map', { zoomControl: false, dragging: false, scrollWheelZoom: false })
+                 .setView([42.293, -8.551], 13);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap', maxZoom: 19
+      }).addTo(map);
+      L.circleMarker([42.293, -8.551], {
+        radius: 8, fillColor: '#2a4d35', fillOpacity: 1, color: '#fff', weight: 2
+      }).addTo(map).bindPopup('<strong>Amoedo</strong><br>Pazos de Borbén');
+    });
+  </script>
+
+
 </body>
 </html>
